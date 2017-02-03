@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/mkerr64/9bitDev/edit/maste
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-![9bit](https://mkerr64.github.io/9bitDev/)
+![Imgur](http://i.imgur.com/2dRvwO5.png)
 
 ### Markdown
 
