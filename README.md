@@ -1,6 +1,6 @@
 ## Welcome to Team 9's webpage
 9bit Development - CS2212 team 9
-![Imgur](http://i.imgur.com/2dRvwO5.png)
+![Imgur](http://i.imgur.com/CW74HKO.png)
 
 We intend to create a web based financial planning product that will track spending habits
 and offer budgeting aids. Users will upload their financial information from desired banks to
