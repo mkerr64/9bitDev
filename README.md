@@ -9,6 +9,9 @@ categorize their expenses. Expenses will be analyzed, and the user will be able 
 advice to save money, along with providing a glossary of possible unfamiliar financial terms.
 
 [Team Roster Page](TeamRoster.md)
+
 [Software Design Page](SoftwareDesign.md)
+
 [UI Design Page](UIDesign.md)
+
 [Project Plan Page](ProjectPlan.md)
