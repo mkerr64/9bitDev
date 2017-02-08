@@ -31,3 +31,18 @@ Name: Mitchell Kerr
 Role: File Manager/ Project Owner/ Backend   
 Skills: Java, Python, MATLAB, C   
 Background: Mathematics   
+
+Name: Jian Ping Xu
+Role: Front End/Front End Leader
+Skills: Java, C, Python, JavaScript, R
+Background: Computer Science, Business
+
+Name: Daniel Le
+Role: Back End
+Skills: Java, C, Android Studio, HTML, CSS, JS
+Background: Computer Science, Mobile App Development
+
+Name: Andrew Katoch
+Role: Front End/UX
+Skills: Java, C, Python, JS, UI
+Background: Computer Science,  Fine Art
