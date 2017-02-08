@@ -34,7 +34,7 @@ Background: Mathematics
 
 Name: Jian Ping Xu                    
 Role: Front End/Front End Leader             
-Skills: Java, C, Python, JavaScript, R
+Skills: Java, C, Python, JavaScript, R     
 Background: Computer Science, Business       
 
 Name: Daniel Le       
