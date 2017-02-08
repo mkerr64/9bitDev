@@ -45,6 +45,5 @@ Background: Computer Science, Mobile App Development  
 Name: Andrew Katoch       
 Role: Front End/UX                
 Skills: Java, C, Python, JS, UI                                                                                   
-Background: Computer Science,  Fine Art                 
-
-
+Background: Computer Science, Fine Arts                 
+-------------------------------------------------
