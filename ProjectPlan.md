@@ -40,7 +40,7 @@ Since the API is free and we will likely be dealing with a small set of avatars,
 #### Basic User Input 
 This feature allows the user to interact with the application. The application’s main source of data will be the users financial information provided through this feature.
 
-This is a core feature for the app. and will require standard input/output commands.   
+This is a core feature for the app and will require standard input/output commands.   
 
 This feature is crucial for the application as the purpose of the app is to provide information to the user based on their personal financial data. The following features rely on basic user input:    
 
@@ -103,7 +103,7 @@ In order for this feature to be implemented we will need:
 This is not essential to the rest of the application and no primary features rely on this to be implemented.    
 
 #### Reward System    
-This feature is an extension of the gamification feature. It would provide users with rewards for reaching milestones set by the application. We intend to incorporate time based milestones with this feature. For example, for every 6 months a user logs information, they will receive a reward within the application.    
+This feature is an extension of the gamification feature. It will provide users with rewards for reaching milestones set by the application. We intend to incorporate time based milestones with this feature. For example, for every 6 months a user logs information, they will receive a reward within the application.    
 
 To implement this feature we will be using all the implementation requirements of gamification with the only extra requirement being additional time to add an extensive rewards system.    
 
