@@ -2,6 +2,6 @@
 
 [Home](README.md)
 
-If the image is too small, here is a direct link: http://i.imgur.com/UIpEnnR.png     
+If the image is too small, [here](http://i.imgur.com/UIpEnnR.png) is a direct link.    
 
 ![UML](http://i.imgur.com/UIpEnnR.png =250x)
