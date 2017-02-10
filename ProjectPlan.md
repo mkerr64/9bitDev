@@ -6,9 +6,9 @@
 #### Visualization
 This feature will provide the user with visual representations of their spending and saving habits in the form of charts and graphs.     
 
-In order for this feature to be implemented we will need:
+In order for this feature to be implemented we will need:   
   *  Data to create the visualizations. If the graphs and charts are specifically for the user, then these will be created by the data that the user provides when they use the app. If the user’s data is being compared to national spending trends, then additional data will be required. We will be using the Census Canada API for this.     
-  *  Conversion of the data into visuals such as charts and graphs. This will be done by grouping the data into relevant categories (such as by month or what money is being spent on) in a Java program. The categories will be pre-set and the user will enter amounts for each category and/or month.
+  *  Conversion of the data into visuals such as charts and graphs. This will be done by grouping the data into relevant categories (such as by month or what money is being spent on) in a Java program. The categories will be pre-set and the user will enter amounts for each category and/or month.    
   *  An API to create comprehensive visuals. This will be done using Google Charts API.    
 
 This feature is an important part of the app as it provides a visual guide to the user’s progress in their budgeting goals. Since failure to implement this feature would severely affect other features, it will be prioritized to ensure it is completed and successfully implemented.   
