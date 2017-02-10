@@ -19,6 +19,7 @@ This feature is an important part of the app as it provides a visual guide to th
 This feature will provide users with goals and rewards for achieving certain financial and budgeting milestones during their use of the app. Depending on the level of gamification, this will influence how the app encourages users to save and budget their money.    
 
 In order to implement this we will need:    
+
 * A program that will set numerical values that will trigger achievements/rewards when reached. This will be done by one team member using a Java program.      
 * Visual representation – another team member will work on integrating the rewards into the user interface so that the user can see what achievements they’ve earned. This can be done either with visuals from Java, or if we choose to have more advanced visuals an API such as Google charts can be used.         
 
