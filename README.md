@@ -3,6 +3,7 @@
 
 ![Imgur](http://i.imgur.com/CW74HKO.png)
 
+This Project is for the course CS2212, Introduction to Software Engineering, at The University of Western Ontario.    
 We intend to create a web based financial planning product that will track spending habits
 and offer budgeting aids. Users will upload their financial information from desired banks to
 categorize their expenses. Expenses will be analyzed, and the user will be able to view personalised
