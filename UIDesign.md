@@ -27,21 +27,51 @@ The game page keeps track of achievements and rewards for the user. For instance
 - achievements or encouragement messages
 - budget comparison
 
-## MOCKUPS
+## MOCKUPS   
+The UI was designed with a flat, minimalist design in mind. Shades such as shadow and colour choice were inspired by Material Design. The overall aesthetic was made with elements of mobile patterns, in order to be easily used and ported to mobile platforms.     
 
-#### Palette
-![Palette](http://i.imgur.com/NdZUKV3.png)   
+Navigation done through sidebar.      
+ 
+PROGRAMS USED: paint.NET, Photoshop CS5     
 
-![Imgur](http://i.imgur.com/0K514uo.png)    
+#### Palette     
+![Palette](http://i.imgur.com/NdZUKV3.png)    
 
-![Imgur](http://i.imgur.com/SrdZmJ3.jpg)    
+Dashboard:    
 
-![Imgur](http://i.imgur.com/SWGzgmM.jpg)
+Quick view of all info: graphs, budget, categories, transaction and analytical advice.     
 
-![Imgur](http://i.imgur.com/BHlAbJ5.jpg)   
+![Dashboard](http://i.imgur.com/m3JuhGQ.png)    
 
-![Imgur](http://i.imgur.com/4eyLbo6.jpg)   
+Signup/login page:     
 
-![Imgur](http://i.imgur.com/d27Ki3n.png)   
+Other views not available until user is logged in.    
 
-![Imgur](http://i.imgur.com/9ZsKFHv.png)   
+![Signup](http://i.imgur.com/BHlAbJ5.jpg)     
+
+![Login](http://i.imgur.com/4eyLbo6.jpg)      
+
+Initial transactions/startup page:     
+
+At first start, each new month or each time period, income and savings goal are inputted.     
+
+![Income](http://i.imgur.com/bwaWoab.jpg)    
+
+Everyday Transaction page:    
+
+Input of granular transaction.    
+
+![Transaction](http://i.imgur.com/9NyvfnD.jpg)            
+
+Gamification:     
+
+Shows achievements and stretch goals.    
+
+![Achievements](http://i.imgur.com/hpMlrRc.png)
+
+My Account/Settings:     
+
+Allows the change of user's avatar.    
+
+![Profile](http://i.imgur.com/PdrA1Bk.png)    
+
