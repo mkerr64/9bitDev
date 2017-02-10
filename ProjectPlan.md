@@ -7,6 +7,7 @@
 This feature will provide the user with visual representations of their spending and saving habits in the form of charts and graphs.     
 
 In order for this feature to be implemented we will need:   
+
 * Data to create the visualizations. If the graphs and charts are specifically for the user, then these will be created by the data that the user provides when they use the app. If the user’s data is being compared to national spending trends, then additional data will be required. We will be using the Census Canada API for this.     
 * Conversion of the data into visuals such as charts and graphs. This will be done by grouping the data into relevant categories (such as by month or what money is being spent on) in a Java program. The categories will be pre-set and the user will enter amounts for each category and/or month.    
 * An API to create comprehensive visuals. This will be done using Google Charts API.    
@@ -28,6 +29,7 @@ Since this feature relies on the user’s data and implementing a set of variabl
 This feature would give users a basic form of personalization for their accounts on the app.    
 
 In order for this feature to be implemented we will need:    
+
 * A basic repository of images that the user can choose from for their avatar, or the ability to upload an image of their choosing. An API such as Avatars.io will be used for this.     
 * Integration with user profile – this will be done by adding a method to the user profile class that creates an avatar and allows the user to choose one from the repository or upload their own.       
 
@@ -40,13 +42,15 @@ This feature allows the user to interact with the application. The application�
 This is a core feature for the app. and will require standard input/output commands.   
 
 This feature is crucial for the application as the purpose of the app is to provide information to the user based on their personal financial data. The following features rely on basic user input:    
+
 * analysis, comparison, visualization, gamification, and reward system.       
 
 
 #### Comparison
 This feature allows the user to see how their personal financial habits are compared to the rest of the populations.    
 
-In order for this feature to be implemented we will need:    
+In order for this feature to be implemented we will need:  
+
 * The data the user provides the application through basic user input.       
 * We will use Census Canada API to gather data about Canada’s population.       
 
@@ -59,6 +63,7 @@ Our application is focused on providing the user with more than just a visual re
 This feature allows the user to customize their personalized avatar. This feature will take the basic avatar previously mentioned in basic features and enhance it by being able to customize the colour and style of the avatars clothing and add accessories.   
 
 In order for this feature to be implemented we will need:    
+
 * The avatars/personalization feature.     
 * A repository of images of specific clothing items such as shirts, pants, hats, shoes, etc. in different colours and images of accessories.      
 * Integration with user profile — this will add an additional method to the user profile class, allowing the user to take one of the avatars from the repository and customize it further.       
