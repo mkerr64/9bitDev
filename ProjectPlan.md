@@ -57,6 +57,17 @@ In order for this feature to be implemented we will need:
 
 Our application is focused on providing the user with more than just a visual representation of their spending habits. This important feature will provide users with the ability to see how they compare to their peers. This feature relies on basic user input to work as well as the data provided by the Census Canada API. Although this feature is essential to the app, no feature is relying on this feature to run for them to work.      
       
+#### Analysis
+This core feature will analyze the user’s inputs to give suggestions on how the user can improve their budget. This will be done by tracking the user’s spending in all categories such as food, housing, and leisure.    
+
+In order for this feature to be implemented we will need:    
+
+* Existing budgeting strategies that are taught in financial literacy courses such as the 50/30/20 rule in order to analyze the user’s spending habits.    
+* User data to be analyzed which we will store in a database after being entered using the Basic User Input feature.   
+
+The visualization and gamification will be dependent on this feature. This is because the data to be visualized includes this analyzed portion. Gamification requires this as this will be used to help rank the user in terms of their progress financially.     
+
+
 
 ## Extended Features
 
@@ -69,4 +80,32 @@ In order for this feature to be implemented we will need:
 * A repository of images of specific clothing items such as shirts, pants, hats, shoes, etc. in different colours and images of accessories.      
 * Integration with user profile — this will add an additional method to the user profile class, allowing the user to take one of the avatars from the repository and customize it further.       
 
-This is a feature our team will implement if there is additional time. The rest of the project is not dependent on this feature.
+This is a feature our team will implement if there is additional time. The rest of the project is not dependent on this feature.    
+
+##### Definitions    
+This feature will show definitions for every financial term that is relevant to the user once the user highlights over a relevant financial term. The aim is to develop financial literacy and allow the user to better understand financials.     
+
+In order for this feature to be implemented we will need:     
+
+* Integration with definitions from Wikipedia using the MediaWiki API.
+* Integration with the Visualization, Comparison, and Analysis features as this will add supplementary information that would assist these features.    
+
+This feature is not essential to the application and no other features rely on it to be implemented.    
+
+#### Customize Appearance   
+This feature will allow the user to customize the appearance of the application. Users will be able to change things like the applications background color, text color, and the interface color.    
+
+In order for this feature to be implemented we will need:   
+
+* The avatars/personalization feature and integration with it to change the relevant UI elements.    
+* A repository of different text fonts. 
+
+This is not essential to the rest of the application and no primary features rely on this to be implemented.    
+
+#### Reward System    
+This feature is an extension of the gamification feature. It would provide users with rewards for reaching milestones set by the application. We intend to incorporate time based milestones with this feature. For example, for every 6 months a user logs information, they will receive a reward within the application.    
+
+To implement this feature we will be using all the implementation requirements of gamification with the only extra requirement being additional time to add an extensive rewards system.    
+
+This feature is not an essential feature of the application. No other feature is dependent on this feature to work.    
+
