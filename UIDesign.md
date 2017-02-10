@@ -73,5 +73,6 @@ Shows achievements and stretch goals.
 
 Allows the change of user's avatar.    
 
-![Profile](http://i.imgur.com/PdrA1Bk.png)    
+![Profile](http://i.imgur.com/PdrA1Bk.png)     
 
+[Home](README.md) 
