@@ -37,13 +37,13 @@ PROGRAMS USED: paint.NET, Photoshop CS5
 #### Palette     
 ![Palette](http://i.imgur.com/NdZUKV3.png)    
 
-Dashboard:    
+#### Dashboard:    
 
 Quick view of all info: graphs, budget, categories, transaction and analytical advice.     
 
 ![Dashboard](http://i.imgur.com/m3JuhGQ.png)    
 
-Signup/login page:     
+#### Signup/login page:     
 
 Other views not available until user is logged in.    
 
@@ -51,25 +51,25 @@ Other views not available until user is logged in.
 
 ![Login](http://i.imgur.com/4eyLbo6.jpg)      
 
-Initial transactions/startup page:     
+#### Initial transactions/startup page:     
 
 At first start, each new month or each time period, income and savings goal are inputted.     
 
 ![Income](http://i.imgur.com/bwaWoab.jpg)    
 
-Everyday Transaction page:    
+#### Everyday Transaction page:    
 
 Input of granular transaction.    
 
 ![Transaction](http://i.imgur.com/9NyvfnD.jpg)            
 
-Gamification:     
+#### Gamification:     
 
 Shows achievements and stretch goals.    
 
 ![Achievements](http://i.imgur.com/hpMlrRc.png)
 
-My Account/Settings:     
+#### My Account/Settings:     
 
 Allows the change of user's avatar.    
 
