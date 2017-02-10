@@ -2,4 +2,4 @@
 
 [Home](README.md)
 
-![UML](http://i.imgur.com/Gzs5QAm.png)
+![UML](http://i.imgur.com/UIpEnnR.png)
