@@ -1,4 +1,5 @@
 # UI DESIGN PAGE
+[Home](README.md)   
 
 ### Home/Dashboard
 The dashboard is the home page of our app, where an overview of the user’s data can be seen. In the centre of this screen is be a pie chart of the user’s spending, with different colours corresponding to different categories. Three buttons, labeled “daily”, “weekly” and “monthly”, are directly below the pie chart and can be pressed to view the average spending for the selected period. Beside the chart are the specific data points for each category.    
