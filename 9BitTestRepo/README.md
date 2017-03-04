@@ -40,3 +40,5 @@ OPTION 2 - Command Line
 - Go to the folder where your project is stored and SHIFT + right-click and select "open a new command window here"
 - run grails
 - then run-app
+
+Dependencies: merged pull requests from group member GitHub repositories
