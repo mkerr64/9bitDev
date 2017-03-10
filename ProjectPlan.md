@@ -25,18 +25,6 @@ In order to implement this we will need:
 
 Since this feature relies on the user’s data and implementing a set of variables corresponding to amount for the back end and visuals for the front end, it should be fairly easily to implement. With the exception of the rewards feature, no other features will be affected should this feature not be completed.    
 
-
-#### Avatars/Personalization
-This feature would give users a basic form of personalization for their accounts on the app.    
-
-In order for this feature to be implemented we will need:    
-
-* A basic repository of images that the user can choose from for their avatar, or the ability to upload an image of their choosing. An API such as Avatars.io will be used for this.     
-* Integration with user profile – this will be done by adding a method to the user profile class that creates an avatar and allows the user to choose one from the repository or upload their own.       
-
-Since the API is free and we will likely be dealing with a small set of avatars, our team should be able to implement this feature. The rest of the project will not be affected if we are not able to implement this feature.    
-
-
 #### Basic User Input 
 This feature allows the user to interact with the application. The application’s main source of data will be the users financial information provided through this feature.
 
