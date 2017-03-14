@@ -21719,7 +21719,7 @@ var TransactionComponent = _react2.default.createClass({
             amount: "", //transaction amount
             choice: "", //category choice
             date: "", //transaction date
-            error: "" //error message to be displayed if invalid input
+            error: " " //error message to be displayed if invalid input
         };
     },
 
@@ -21731,10 +21731,123 @@ var TransactionComponent = _react2.default.createClass({
     },
 
 
-    //store amount in attribute
-    handleCategoryChange: function handleCategoryChange(e) {
+    //select food category
+    handleFood: function handleFood(e) {
         e.preventDefault();
-        this.setState({ choice: this.refs.select.value });
+        this.setState({ choice: "food" });
+        document.getElementById("food").src = "http://i.imgur.com/rDAfnDb.jpg";
+        document.getElementById("housing").src = "http://imgur.com/vizSGpL.png";
+        document.getElementById("leisure").src = "http://i.imgur.com/5CM1RDo.png";
+        document.getElementById("transportation").src = "http://i.imgur.com/i6RsSYD.png";
+        document.getElementById("savings").src = "http://imgur.com/doYW41L.png";
+        document.getElementById("school").src = "http://i.imgur.com/N2JdLLN.png";
+        document.getElementById("clothing").src = "http://i.imgur.com/rrfDBAq.png";
+        document.getElementById("other").src = "http://i.imgur.com/coq5XEj.png";
+    },
+
+
+    //select housing category
+    handleHousing: function handleHousing(e) {
+        e.preventDefault();
+        this.setState({ choice: "housing" });
+        document.getElementById("food").src = "http://i.imgur.com/YTFVZ0E.png";
+        document.getElementById("housing").src = "http://imgur.com/zCfBceg.jpg";
+        document.getElementById("leisure").src = "http://i.imgur.com/5CM1RDo.png";
+        document.getElementById("transportation").src = "http://i.imgur.com/i6RsSYD.png";
+        document.getElementById("savings").src = "http://imgur.com/doYW41L.png";
+        document.getElementById("school").src = "http://i.imgur.com/N2JdLLN.png";
+        document.getElementById("clothing").src = "http://i.imgur.com/rrfDBAq.png";
+        document.getElementById("other").src = "http://i.imgur.com/coq5XEj.png";
+    },
+
+
+    //select leisure category
+    handleLeisure: function handleLeisure(e) {
+        e.preventDefault();
+        this.setState({ choice: "leisure" });
+        document.getElementById("food").src = "http://i.imgur.com/YTFVZ0E.png";
+        document.getElementById("housing").src = "http://imgur.com/vizSGpL.png";
+        document.getElementById("leisure").src = "http://i.imgur.com/Zbe7zeN.jpg";
+        document.getElementById("transportation").src = "http://i.imgur.com/i6RsSYD.png";
+        document.getElementById("savings").src = "http://imgur.com/doYW41L.png";
+        document.getElementById("school").src = "http://i.imgur.com/N2JdLLN.png";
+        document.getElementById("clothing").src = "http://i.imgur.com/rrfDBAq.png";
+        document.getElementById("other").src = "http://i.imgur.com/coq5XEj.png";
+    },
+
+
+    //select transportation category
+    handleTransportation: function handleTransportation(e) {
+        e.preventDefault();
+        this.setState({ choice: "transportation" });
+        document.getElementById("food").src = "http://i.imgur.com/YTFVZ0E.png";
+        document.getElementById("housing").src = "http://imgur.com/vizSGpL.png";
+        document.getElementById("leisure").src = "http://i.imgur.com/5CM1RDo.png";
+        document.getElementById("transportation").src = "http://i.imgur.com/EDP6SlO.jpg";
+        document.getElementById("savings").src = "http://imgur.com/doYW41L.png";
+        document.getElementById("school").src = "http://i.imgur.com/N2JdLLN.png";
+        document.getElementById("clothing").src = "http://i.imgur.com/rrfDBAq.png";
+        document.getElementById("other").src = "http://i.imgur.com/coq5XEj.png";
+    },
+
+
+    //select savings category
+    handleSavings: function handleSavings(e) {
+        e.preventDefault();
+        this.setState({ choice: "savings" });
+        document.getElementById("food").src = "http://i.imgur.com/YTFVZ0E.png";
+        document.getElementById("housing").src = "http://imgur.com/vizSGpL.png";
+        document.getElementById("leisure").src = "http://i.imgur.com/5CM1RDo.png";
+        document.getElementById("transportation").src = "http://i.imgur.com/i6RsSYD.png";
+        document.getElementById("savings").src = "http://i.imgur.com/0QeVgBE.jpg";
+        document.getElementById("school").src = "http://i.imgur.com/N2JdLLN.png";
+        document.getElementById("clothing").src = "http://i.imgur.com/rrfDBAq.png";
+        document.getElementById("other").src = "http://i.imgur.com/coq5XEj.png";
+    },
+
+
+    //select school category
+    handleSchool: function handleSchool(e) {
+        e.preventDefault();
+        this.setState({ choice: "school" });
+        document.getElementById("food").src = "http://i.imgur.com/YTFVZ0E.png";
+        document.getElementById("housing").src = "http://imgur.com/vizSGpL.png";
+        document.getElementById("leisure").src = "http://i.imgur.com/5CM1RDo.png";
+        document.getElementById("transportation").src = "http://i.imgur.com/i6RsSYD.png";
+        document.getElementById("savings").src = "http://imgur.com/doYW41L.png";
+        document.getElementById("school").src = "http://i.imgur.com/9IpnNcW.jpg";
+        document.getElementById("clothing").src = "http://i.imgur.com/rrfDBAq.png";
+        document.getElementById("other").src = "http://i.imgur.com/coq5XEj.png";
+    },
+
+
+    //select clothing category
+    handleClothing: function handleClothing(e) {
+        e.preventDefault();
+        this.setState({ choice: "clothing" });
+        document.getElementById("food").src = "http://i.imgur.com/YTFVZ0E.png";
+        document.getElementById("housing").src = "http://imgur.com/vizSGpL.png";
+        document.getElementById("leisure").src = "http://i.imgur.com/5CM1RDo.png";
+        document.getElementById("transportation").src = "http://i.imgur.com/i6RsSYD.png";
+        document.getElementById("savings").src = "http://imgur.com/doYW41L.png";
+        document.getElementById("school").src = "http://i.imgur.com/N2JdLLN.png";
+        document.getElementById("clothing").src = "http://i.imgur.com/aYrA47i.jpg";
+        document.getElementById("other").src = "http://i.imgur.com/coq5XEj.png";
+    },
+
+
+    //select other category
+    handleOther: function handleOther(e) {
+        e.preventDefault();
+        this.setState({ choice: "other" });
+        document.getElementById("food").src = "http://i.imgur.com/YTFVZ0E.png";
+        document.getElementById("housing").src = "http://imgur.com/vizSGpL.png";
+        document.getElementById("leisure").src = "http://i.imgur.com/5CM1RDo.png";
+        document.getElementById("transportation").src = "http://i.imgur.com/i6RsSYD.png";
+        document.getElementById("savings").src = "http://imgur.com/doYW41L.png";
+        document.getElementById("school").src = "http://i.imgur.com/N2JdLLN.png";
+        document.getElementById("clothing").src = "http://i.imgur.com/rrfDBAq.png";
+        document.getElementById("other").src = "http://i.imgur.com/eh2JP8F.jpg";
     },
 
 
@@ -21758,7 +21871,7 @@ var TransactionComponent = _react2.default.createClass({
 
         // Prevents reinitialization
         e.preventDefault();
-        this.setState({ choice: this.refs.select.value }); //get category choice and date from user
+        //this.setState({choice : this.refs.select.value});         //get category choice and date from user
         var message = "";
 
         //check if the amount is a valid number
@@ -21771,7 +21884,7 @@ var TransactionComponent = _react2.default.createClass({
         }
 
         //check if category is selected
-        if (this.state.choice == "selectcategory" || this.state.choice == "") {
+        if (this.state.choice == "") {
             message += "Please choose a category. ";
         }
 
@@ -21813,7 +21926,7 @@ var TransactionComponent = _react2.default.createClass({
             ),
             _react2.default.createElement(
                 'div',
-                { style: { marginLeft: 225, marginTop: 20 } },
+                { style: { marginLeft: 225, marginTop: 10 } },
                 _react2.default.createElement(
                     'font',
                     { style: { fontFamily: "Arial" } },
@@ -21824,14 +21937,14 @@ var TransactionComponent = _react2.default.createClass({
                     ),
                     _react2.default.createElement(
                         'div',
-                        { style: { marginTop: 30 } },
+                        { style: { marginTop: 15 } },
                         _react2.default.createElement(
                             'form',
                             { onSubmit: this.handleCheck },
                             _react2.default.createElement(
                                 'font',
                                 { size: '+2' },
-                                'Amount'
+                                'Amount:'
                             ),
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(
@@ -21842,7 +21955,7 @@ var TransactionComponent = _react2.default.createClass({
                             _react2.default.createElement('input', { type: 'text', ref: 'amount', name: 'amount', defaultValue: this.state.amount, onChange: this.handleAmountChange }),
                             _react2.default.createElement(
                                 'div',
-                                { style: { marginTop: 20 } },
+                                { style: { marginTop: 20, marginBottom: 10 } },
                                 _react2.default.createElement(
                                     'font',
                                     { size: '+2' },
@@ -21850,68 +21963,19 @@ var TransactionComponent = _react2.default.createClass({
                                 ),
                                 _react2.default.createElement('br', null)
                             ),
+                            _react2.default.createElement('br', null),
+                            _react2.default.createElement('img', { id: 'food', src: 'http://i.imgur.com/YTFVZ0E.png', width: '120', height: '120', alt: '', onClick: this.handleFood }),
+                            _react2.default.createElement('img', { id: 'housing', src: 'http://imgur.com/vizSGpL.png', width: '120', height: '120', alt: '', onClick: this.handleHousing }),
+                            _react2.default.createElement('img', { id: 'leisure', src: 'http://i.imgur.com/5CM1RDo.png', width: '120', height: '120', alt: '', onClick: this.handleLeisure }),
+                            _react2.default.createElement('img', { id: 'transportation', src: 'http://i.imgur.com/i6RsSYD.png', width: '120', height: '120', alt: '', onClick: this.handleTransportation }),
+                            _react2.default.createElement('br', null),
+                            _react2.default.createElement('img', { id: 'savings', src: 'http://imgur.com/doYW41L.png', width: '120', height: '120', alt: '', onClick: this.handleSavings }),
+                            _react2.default.createElement('img', { id: 'school', src: 'http://i.imgur.com/N2JdLLN.png', width: '120', height: '120', alt: '', onClick: this.handleSchool }),
+                            _react2.default.createElement('img', { id: 'clothing', src: 'http://i.imgur.com/rrfDBAq.png', width: '120', height: '120', alt: '', onClick: this.handleClothing }),
+                            _react2.default.createElement('img', { id: 'other', src: 'http://i.imgur.com/coq5XEj.png', width: '120', height: '120', alt: '', onClick: this.handleOther }),
                             _react2.default.createElement(
                                 'div',
-                                { style: { marginTop: 5 } },
-                                _react2.default.createElement(
-                                    'select',
-                                    { ref: 'select', id: 'select', onChange: this.handleCategoryChange },
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'selectcategory' },
-                                        ' -- Please select -- '
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'food' },
-                                        'Food'
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'housing' },
-                                        'Housing'
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'utilities' },
-                                        'Utilities'
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'leisure' },
-                                        'Leisure'
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'transportation' },
-                                        'Transportation'
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'savings' },
-                                        'Savings'
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'school' },
-                                        'School'
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'clothing' },
-                                        'Clothing'
-                                    ),
-                                    _react2.default.createElement(
-                                        'option',
-                                        { value: 'other' },
-                                        'Other'
-                                    )
-                                ),
-                                _react2.default.createElement('br', null)
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { style: { marginTop: 20 } },
+                                { style: { marginTop: 20, marginBottom: 10 } },
                                 _react2.default.createElement(
                                     'font',
                                     { size: '+2' },
@@ -21928,16 +21992,7 @@ var TransactionComponent = _react2.default.createClass({
                         ),
                         _react2.default.createElement(
                             'div',
-                            { style: { marginTop: 30 } },
-                            _react2.default.createElement(
-                                'form',
-                                { onSubmit: this.handleGoBack },
-                                _react2.default.createElement('input', { type: 'submit', value: 'Go back to dashboard' })
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { style: { marginTop: 60 } },
+                            { style: { marginTop: 5 } },
                             _react2.default.createElement(
                                 'font',
                                 { size: '+1', color: 'red' },

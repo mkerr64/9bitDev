@@ -96,7 +96,7 @@ function drawChart() {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Topping');
     data.addColumn('number', 'Slices');
-    data.addRows([['Mushrooms', 3], ['Onions', 1], ['Olives', 1], ['Zucchini', 1], ['Pepperoni', 2]]);
+    data.addRows([['Housing', 3], ['Food', 1], ['Leisure', 1], ['Legal', 1], ['Gas', 2]]);
 
     // Set chart options
     var options = {
@@ -115,10 +115,10 @@ function drawChart() {
 // callback that draws table chart
 function drawTableChart() {
     var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Name');
-    data.addColumn('number', 'Salary');
-    data.addColumn('boolean', 'Full Time Employee');
-    data.addRows([['Mike', { v: 10000, f: '$10,000' }, true], ['Jim', { v: 8000, f: '$8,000' }, false], ['Alice', { v: 12500, f: '$12,500' }, true], ['Bob', { v: 7000, f: '$7,000' }, true]]);
+    data.addColumn('string', 'Transaction Category');
+    data.addColumn('number', 'Amount');
+    data.addColumn('boolean', 'Good');
+    data.addRows([['Housing', { v: 10000, f: '$10,000' }, true], ['Food', { v: 8000, f: '$8,000' }, false], ['Food', { v: 12500, f: '$12,500' }, true], ['Leisure', { v: 7000, f: '$7,000' }, true]]);
 
     var table = new google.visualization.Table(document.getElementById('table_div'));
 
