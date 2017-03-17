@@ -32,6 +32,13 @@ class AccountsController extends RestfulController{
         def password = params.password
 
         if((uname=="bob") && (password=="123")){
+            UserAccount acc = new UserAccount(userName: "bun", password: "234").save()
+            if(acc == null){
+                System.out.println("nnull")
+            }
+            else{
+                System.out.println(UserAccount.count())
+            }
             response.status = 200
         } else {
             response.status = 404
