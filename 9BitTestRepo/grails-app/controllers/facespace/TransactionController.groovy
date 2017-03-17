@@ -3,7 +3,7 @@ package facespace
 import grails.rest.RestfulController
 
 class TransactionController extends RestfulController{
-    static allowedMethods = [addTransaction: 'POST']
+    static allowedMethods = [addTransaction: 'POST',get_transactions: 'POST']
     static responseFormats = ['json', 'xml']
 
     TransactionController(){
@@ -11,59 +11,31 @@ class TransactionController extends RestfulController{
     }
     //for fetch also
     def addTransaction(){
+        //Saves the Transaction parameters obtained from front-end
         String uAmount = params.amount
         String uCategory = params.category
         String uDate = params.date
+
+        //Gets the user corresponding to the provided username
         UserAccount userAcc = UserAccount.findByUserName("bun")
         System.out.println(uCategory)
+
         if(userAcc != null){
+            //Creates a new transaction and attaches it to the user
             Transaction newTran = new Transaction(sourceProfile: userAcc, amounts: uAmount, categorys: uCategory, dates: uDate)
             userAcc.addToTransactions(newTran).save(flush: true)
             System.out.println(userAcc.getTransactions().size())
             response.status = 200
         }
         else{
+            //Throws a 404 if the user could not be found
             response.status = 404
         }
-        /*
-        new Transaction(amount: uAmount, category: uCategory, date: uDate).save()
-        System.out.print("Transaction added")
-        def trans = Transaction.get(1)
-        if(trans == null){
-            System.out.println(Transaction.count())
-            response.status = 404
-        }
-        else{
-            response.status = 200
-        }*/
-
-        //check that username exists and if it's not null then add a new transaction
-        //def account = UserAccount.find{userName == uname}
-        //if (account != null){
-        //respond account.getProfile().get_transactions()
-        //create new transaction object and save it
-        //new Transaction(amount: amount, category: category, date: date).save()
-        //check that transaction is in list?
-        //}
-        //else {
-        //response.status = 404
-        //}
-
-        // check transaction can be found in database
-        //def check_transaction = Profile.getTransactions()
-
-        //check if transaction was added (works for single transaction added)
-//        if(!(temp + 1 == count)){
-//            response.status = 404
-//        }
-//        else {
-//            response.status = 200
-//        }
 
     }
-
-    //for fetch command
+    //Returns a list of all the transactions with the associated username
     def get_transactions(){
-        return transactions
+        UserAccount userAcc = UserAccount.findByUserName("bun")
+        return userAcc.getTransactions()
     }
 }

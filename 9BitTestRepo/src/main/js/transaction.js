@@ -176,7 +176,7 @@ var TransactionComponent = React.createClass({
             let amount = this.state.amount;
             let category = this.state.choice;
             let date = this.state.date;
-            fetch('http://localhost:8080/userAccount/addTransaction?'
+            fetch('http://localhost:8080/transaction/addTransaction?'
                 + 'amount=' + amount + '&category=' + category + '&date=' + date, {
                 method: 'POST',
                 headers: {
