@@ -21899,7 +21899,7 @@ var TransactionComponent = _react2.default.createClass({
             var amount = this.state.amount;
             var category = this.state.choice;
             var date = this.state.date;
-            fetch('http://localhost:8080/userAccount/addTransaction?' + 'amount=' + amount + '&category=' + category + '&date=' + date, {
+            fetch('http://localhost:8080/transaction/addTransaction?' + 'amount=' + amount + '&category=' + category + '&date=' + date, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
