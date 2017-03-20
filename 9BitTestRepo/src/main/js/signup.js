@@ -46,7 +46,7 @@ var AccountSignup = React.createClass({
             this.setState({ success: "Passwords do not match!"})
         }
         else {
-            fetch('http://localhost:8080/accounts/signup?'
+            fetch('http://localhost:8080/accountCreation/signup?'
                 + 'userName=' + name + "&password=" + password, {
                 method: 'POST',
                 headers: {
@@ -57,7 +57,7 @@ var AccountSignup = React.createClass({
                 if (res.ok) {
                     e.preventDefault();
                     this.setState({success: 'Account created! Username: ' + name + ' Password: '+ password});
-                    window.location = 'http://localhost:8080/dashboard';
+                    //window.location = 'http://localhost:8080/dashboard';
                 }
                 //if account and password was not created
                 else {
@@ -91,7 +91,7 @@ var AccountSignup = React.createClass({
                 <tr>
                     <td style={{align:'left', height:'151', colspan:'2', margin:'auto'}}><blockquote>
                         <h1>
-                            <img id="pic" src="http://i.imgur.com/53taBiC.png" width="115" height="133" alt=""/>
+                            <img id="pic" src="http://i.imgur.com/v085Nmb.png" width="115" height="133" alt=""/>
                             Budget Buddy
                         </h1>
                     </blockquote></td>

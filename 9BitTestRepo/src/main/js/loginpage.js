@@ -19,13 +19,13 @@ var AccountLogin = React.createClass({
     handleNameChange (e) {
         // Prevent following the link.
         e.preventDefault();
-        this.setState({ name : e.target.value , success : "..."});
+        this.setState({ name: e.target.value, success : "   "});
     },
 
     handlePasswordChange (e) {
         // Prevent following the link.
         e.preventDefault();
-        this.setState({ password : e.target.value  , success : "..."});
+        this.setState({ password: e.target.value, success : "   "});
     },
 
 
@@ -35,23 +35,20 @@ var AccountLogin = React.createClass({
         let name = this.state.name;
         let password = this.state.password;
 
-        fetch('http://localhost:8080/accounts/login?'
-            + 'userName=' + name + "&password=" + password, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(res =>{
-            //if account and password was found
-            if(res.ok){
-                this.setState({success: 'Account found'});
-                window.location = 'http://localhost:8080/dashboard';
-            }
-            //if account and password was not found
-            else{
-                this.setState({success: 'Account not found'});
-            }
-        })
+        fetch('http://localhost:8080/accountCreation/login?'
+            + 'userName=' + name + "&password=" + password)
+
+            .then(res =>{
+                //if account and password was found
+                if(res.ok){
+                    this.setState({success: 'Account found'});
+                    //window.location = 'http://localhost:8080/dashboard';
+                }
+                //if account and password was not found
+                else{
+                    this.setState({success: 'Account not found'});
+                }
+            })
 
     },
 
@@ -77,7 +74,7 @@ var AccountLogin = React.createClass({
                 <tr>
                     <td style={{align:'left', height:'151', colspan:'2', margin:'auto'}}><blockquote>
                         <h1>
-                            <img id="pic" src="http://i.imgur.com/53taBiC.png" width="115" height="133" alt=""/>
+                            <img id="pic" src="http://i.imgur.com/v085Nmb.png" width="115" height="133" alt=""/>
                             Budget Buddy
                         </h1>
                     </blockquote></td>
@@ -142,5 +139,3 @@ ReactDOM.render(
     <div>
         <AccountCreation/>
     </div>, document.getElementById('statusFeed'));
-
-

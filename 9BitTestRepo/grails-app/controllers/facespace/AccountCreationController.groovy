@@ -15,22 +15,31 @@ class AccountCreationController extends RestfulController{
         // some default behaviour could be here
     }
 
-    // Our first POST-enabled method
-    // We just want to get the status text and save it to the profile.
-    def createAccount(){
+    def signup(){
         def uname = params.userName
-        System.out.print(uname)
+
         def account = UserAccount.find{userName == uname}
         if(account == null){
-            account = new UserAccount(userName: uname, password: "2212")
+            account = new UserAccount(userName: uname, password: "123")
             new Profile(ownerAccount: account).save()
-            System.out.print('created')
             response.status = 200
-        }
-        else{
-            // Find a better response code...
-            System.out.print('already there')
+        }  else {
             response.status = 404
         }
+
     }
+
+    def login(){
+        def uname = params.userName
+
+        def account = UserAccount.find{userName == uname}
+        if(account == null){
+            response.status = 404
+        }  else {
+            response.status = 200
+        }
+
+    }
+
+
 }

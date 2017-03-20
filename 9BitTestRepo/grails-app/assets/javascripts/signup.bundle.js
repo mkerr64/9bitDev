@@ -21750,7 +21750,7 @@ var AccountSignup = _react2.default.createClass({
             e.preventDefault();
             this.setState({ success: "Passwords do not match!" });
         } else {
-            fetch('http://localhost:8080/accounts/signup?' + 'userName=' + name + "&password=" + password, {
+            fetch('http://localhost:8080/accountCreation/signup?' + 'userName=' + name + "&password=" + password, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
@@ -21760,7 +21760,7 @@ var AccountSignup = _react2.default.createClass({
                 if (res.ok) {
                     e.preventDefault();
                     _this.setState({ success: 'Account created! Username: ' + name + ' Password: ' + password });
-                    window.location = 'http://localhost:8080/dashboard';
+                    //window.location = 'http://localhost:8080/dashboard';
                 }
                 //if account and password was not created
                 else {
@@ -21800,7 +21800,7 @@ var AccountSignup = _react2.default.createClass({
                                 _react2.default.createElement(
                                     'h1',
                                     null,
-                                    _react2.default.createElement('img', { id: 'pic', src: 'http://i.imgur.com/53taBiC.png', width: '115', height: '133', alt: '' }),
+                                    _react2.default.createElement('img', { id: 'pic', src: 'http://i.imgur.com/v085Nmb.png', width: '115', height: '133', alt: '' }),
                                     'Budget Buddy'
                                 )
                             )

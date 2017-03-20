@@ -21724,12 +21724,12 @@ var AccountLogin = _react2.default.createClass({
     handleNameChange: function handleNameChange(e) {
         // Prevent following the link.
         e.preventDefault();
-        this.setState({ name: e.target.value, success: "..." });
+        this.setState({ name: e.target.value, success: "   " });
     },
     handlePasswordChange: function handlePasswordChange(e) {
         // Prevent following the link.
         e.preventDefault();
-        this.setState({ password: e.target.value, success: "..." });
+        this.setState({ password: e.target.value, success: "   " });
     },
     handleSubmit: function handleSubmit(e) {
         var _this = this;
@@ -21739,16 +21739,11 @@ var AccountLogin = _react2.default.createClass({
         var name = this.state.name;
         var password = this.state.password;
 
-        fetch('http://localhost:8080/accounts/login?' + 'userName=' + name + "&password=" + password, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(function (res) {
+        fetch('http://localhost:8080/accountCreation/login?' + 'userName=' + name + "&password=" + password).then(function (res) {
             //if account and password was found
             if (res.ok) {
                 _this.setState({ success: 'Account found' });
-                window.location = 'http://localhost:8080/dashboard';
+                //window.location = 'http://localhost:8080/dashboard';
             }
             //if account and password was not found
             else {
@@ -21787,7 +21782,7 @@ var AccountLogin = _react2.default.createClass({
                                 _react2.default.createElement(
                                     'h1',
                                     null,
-                                    _react2.default.createElement('img', { id: 'pic', src: 'http://i.imgur.com/53taBiC.png', width: '115', height: '133', alt: '' }),
+                                    _react2.default.createElement('img', { id: 'pic', src: 'http://i.imgur.com/v085Nmb.png', width: '115', height: '133', alt: '' }),
                                     'Budget Buddy'
                                 )
                             )
