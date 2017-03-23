@@ -21860,7 +21860,7 @@ var SettingsComponent = _react2.default.createClass({
             ),
             _react2.default.createElement(
                 'div',
-                { style: { marginLeft: 225, marginTop: 20 } },
+                { style: { marginLeft: 150, marginTop: 20 } },
                 _react2.default.createElement(
                     'font',
                     { style: { fontFamily: "Arial" } },
