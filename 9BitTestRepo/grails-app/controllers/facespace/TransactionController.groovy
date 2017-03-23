@@ -38,4 +38,24 @@ class TransactionController extends RestfulController{
         UserAccount userAcc = UserAccount.findByUserName("bun")
         [transactionList:userAcc.getTransactions()]
     }
+
+    //check if user has at least 1 transaction
+    def achievement1(){
+        UserAccount userAcc = UserAccount.findByUserName("bun")
+        if ( (userAcc.getTransactions() != null) && (userAcc.getTransactions().size() >= 1)){
+            response.status = 200
+        } else{
+            response.status = 404
+        }
+    }
+
+    //check if user has at least 5 transactions
+    def achievement5(){
+        UserAccount userAcc = UserAccount.findByUserName("bun")
+        if ( (userAcc.getTransactions() != null) && (userAcc.getTransactions().size() >= 5)){
+            response.status = 200
+        } else {
+            response.status = 404
+        }
+    }
 }

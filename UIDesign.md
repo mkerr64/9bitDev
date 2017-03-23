@@ -12,7 +12,7 @@ Additionally, new transactions can be entered in a field under the pie chart, an
 - budgeting tips in the corner
 
 ### Budget
-The budget screen is where the user can set and change their monthly income. The user can also input their expenses and other transactions in order to receive budgeting tips and track spending which will be displayed on the dashboard. To facilitate this tracking, bar graphs of the top spending categories will aid the user in understanding their spending habits (also in dashboard).    
+The budget screen is where the user can set and change their monthly income. The user can also input their expenses and other transactions in order to track their spending habits, which will be displayed on the dashboard. To facilitate this tracking, bar graphs of the top spending categories will also be included on the dashboard to aid the user in understanding their spending habits.    
 
 - summary of top spending categories
 - input for new transaction

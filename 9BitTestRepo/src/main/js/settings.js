@@ -6,10 +6,11 @@ var SettingsComponent = React.createClass({
     // Used to initialize state
     getInitialState () {
         return {
-            //avatar : "",                                        //some kind of avatar ID?
+            //avatar : "",                                      //some kind of avatar ID?
             new_username : "",                                  //possible new username
             new_password : "",                                  //possible new password
-            current_password : ""                               //current password
+            //current_password : ""                             //current password
+            new_income : 0.00
         }
     },
 
@@ -26,9 +27,14 @@ var SettingsComponent = React.createClass({
     },
 
     //store old_password in attribute
-    handleOldPasswordChange(e){
+    /*handleOldPasswordChange(e){
+     e.preventDefault();
+     this.setState({old_password : e.target.value});
+     },*/
+
+    handleIncomeChange(e){
         e.preventDefault();
-        this.setState({old_password : e.target.value});
+        this.setState({new_income: e.target.value});
     },
 
     //return to dashboard page
@@ -38,7 +44,7 @@ var SettingsComponent = React.createClass({
     },
 
     //submit transaction
-    handleCheck(e) {
+    handleProfileCheck(e) {
         // Prevents reinitialization
         e.preventDefault();
 
@@ -74,77 +80,134 @@ var SettingsComponent = React.createClass({
         }
     },
 
+    handleIncomeCheck(e) {
+        // Prevents reinitialization
+        e.preventDefault();
+
+        let message = "";
+
+        //check if category is selected
+        if (!this.state.new_income){
+            message += "Please enter your income. ";
+        }
+
+        //if no invalid inputs, then proceed to change income
+        //otherwise display an error messsage and stay on the same page
+        if (message == ""){
+            let new_income = this.state.new_income;
+            fetch('http://localhost:8080/userAccount/addTransaction?'
+                + 'new_income=' + new_income, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(res =>{
+                if(res.ok){
+                    this.setState({error: "Income updated!"});
+                }
+                else{
+                    this.setState({error: "Income couldn't be updated."});
+                }
+            });
+        } else {
+            this.setState({error: message});
+        }
+    },
+
+    handleAchievements(e){
+        fetch('http://localhost:8080/transaction/achievement1?'
+           , {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res =>{
+            if(res.ok){
+                document.getElementById("1transaction").src = "http://imgur.com/yp98Nwz.jpg";
+            }
+        });
+
+        fetch('http://localhost:8080/transaction/achievement5?'
+            , {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(res =>{
+            if(res.ok){
+                document.getElementById("5transactions").src = "http://imgur.com/rfcYAkY.jpg";
+            }
+        });
+    },
+
 
     render () {
         return (
-            <body style={{margin:0, padding:0, fontSize:0}}>
-            <title>Add Transaction/Transfer</title>
+            <body style={{margin:0, padding:0, fontSize:0}} onLoad={this.handleAchievements}>
+            <title>My Account</title>
 
-            {/* Wrapper for all template elements*/}
-            {/*<div>*/}
-            {/*/!* Title bar elements*!/*/}
-            {/*<div style={{width:190, height:80, background:'#43a047', display: "inline-block"}}></div>*/}
-            {/*<div style={{height:80, width: 1380, background:'#66BB6A', display:"inline-block", position: "absolute", fontSize: 18}}>*/}
-            {/*<h1 style={{color: "#FFFFFF", paddingLeft: 20, fontFamily: "Arial"}}>Budget Buddy </h1>*/}
-            {/*</div>*/}
 
-            {/*/!* Wrapper for all sidebar elements*!/*/}
-            {/*<div style={{width:190, height: 675, position:"absolute", background: "#ECECEC"}}>*/}
-            {/*/!* Profile picture box*!/*/}
-            {/*<div style={{height: 200, width: 160, marginLeft: 'auto', marginRight: 'auto', marginTop: 75, marginBottom: 75, background: '#BEBEBE'}}>*/}
-            {/*<img/> /!* Insert profile picture*!/*/}
-            {/*</div>*/}
-
-            {/* Sidebar Options*/}
-            {/*<div style={{color:'#BEBEBE', textAlign: 'center', fontSize: 22, borderTopStyle: 'solid', paddingTop: 7, paddingBottom: 7, margin: 0}}>*/}
-            {/*<p>Dashboard</p>*/}
-            {/*<p>Transactions</p>*/}
-            {/*<p>Achievements</p>*/}
-            {/*<p>My Account</p>*/}
-            {/*</div>*/}
-            {/*</div>*/}
-            {/*</div>*/}
-
-            {/* wrapper for TRANSACTION page*/}
+            {/* wrapper for SETTINGS page*/}
             <div style={{marginLeft:225, marginTop:20}}>
                 <font style={{fontFamily:"Arial"}}>
-                    <font size="+5">Edit Settings</font>
+                    <font size="+5">My Account</font>
                     <div style={{marginTop:30}}>
 
-                        {/* submit transaction form */}
-                        <form onSubmit={this.handleCheck}>
+                        {/* three piddly achievements */}
+                        <div style = {{marginTop:30}}>
+                            <font size="+2">Achievements</font> <br/>
+                                <img id="accountcreated" src="http://imgur.com/PhbcBaA.jpg" width="200" height="325" alt=""/>
+                                <img id="1transaction" src="http://imgur.com/LihzuRq.png" width="200" height="325" alt=""/>
+                                <img id="5transactions" src="http://imgur.com/b8yATih.png" width="200" height="325" alt=""/>
 
-                            {/* new username input*/}
-                            <div style={{marginTop:20}}>
-                            <font size="+2">New Username:</font>
-                                <br/>
-                            </div>
-                            <input type="text" ref="new_username" name="new_username" defaultValue={this.state.new_username} onChange={this.handleUsernameChange}/>
+                        </div>
 
-                            {/* new password input*/}
-                            <div style={{marginTop:20}}>
-                            <font size="+2">New Password:</font>
-                                <br/>
-                            </div>
-                            <input type="password" ref="new_username" name="new_username" defaultValue={this.state.new_username} onChange={this.handlePasswordChange}/>
+                        {/* budget form */}
+                        <div style={{marginTop:60}}>
+                            <font size="+2">Edit Budget</font>
+                            <form onSubmit={this.handleIncomeCheck}>
+                                <div style={{marginTop:30}}>
+                                    <font size="+2">New Income:</font>
+                                    <br/>
+                                </div>
+                                <font>$</font>
+                                <input type="number" min="0.01" step="0.01" max="10000"  ref="new_income" name="new_income" defaultValue={this.state.new_income} onChange={this.handleIncomeChange}/>
+                            </form>
 
-                            {/* old_password selection */}
-                            <div style={{marginTop:40}}>
-                                <font size="+2">Verify password:</font>
-                                <br/>
-                            </div>
-                            <input ref="old_password" type="password" id="old_password" onChange={this.handleOldPasswordChange}/>
-
-                            {/* submit transaction button*/}
                             <div style={{marginTop:30}}>
-                                <input type="submit" value="Submit"/>
+                                <input type="submit" value="Submit Income Change"/>
                             </div>
-                        </form>
+                        </div>
 
-                        {/* go back to dashboard*/}
+                        {/* profile change form */}
                         <div style={{marginTop:30}}>
-                            <form onSubmit={this.handleGoBack}>
-                                <input type="submit" value="Go back to dashboard"/>
+                            <form onSubmit={this.handleProfileCheck}>
+
+                                {/* new username input*/}
+                                <div style={{marginTop:30}}>
+                                    <font size="+2">New Username:</font>
+                                    <br/>
+                                </div>
+                                <input type="text" ref="new_username" name="new_username" defaultValue={this.state.new_username} onChange={this.handleUsernameChange}/>
+
+                                {/* new password input*/}
+                                <div style={{marginTop:20}}>
+                                    <font size="+2">New Password:</font>
+                                    <br/>
+                                </div>
+                                <input type="password" ref="new_username" name="new_username" defaultValue={this.state.new_username} onChange={this.handlePasswordChange}/>
+
+                                {/*/!* old_password selection *!/
+                                 <div style={{marginTop:40}}>
+                                 <font size="+2">Verify password:</font>
+                                 <br/>
+                                 </div>
+                                 <input ref="old_password" type="password" id="old_password" onChange={this.handleOldPasswordChange}/>*/}
+
+                                {/* submit profile changes button*/}
+                                <div style={{marginTop:30}}>
+                                    <input type="submit" value="Submit Profile Changes"/>
+                                </div>
                             </form>
                         </div>
 

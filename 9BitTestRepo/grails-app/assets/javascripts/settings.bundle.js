@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/assets/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 180);
+/******/ 	return __webpack_require__(__webpack_require__.s = 179);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21679,8 +21679,7 @@ module.exports = traverseAllChildren;
 /***/ }),
 /* 177 */,
 /* 178 */,
-/* 179 */,
-/* 180 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21689,7 +21688,7 @@ module.exports = traverseAllChildren;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Signup = undefined;
+exports.EditSettings = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -21707,190 +21706,305 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by Emily on 2017-03-03.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var AccountSignup = _react2.default.createClass({
-    displayName: 'AccountSignup',
+var SettingsComponent = _react2.default.createClass({
+    displayName: 'SettingsComponent',
 
 
     // Used to initialize state
     getInitialState: function getInitialState() {
         return {
-            name: "",
-            password: "",
-            verifyPassword: "",
-            success: ""
+            //avatar : "",                                      //some kind of avatar ID?
+            new_username: "", //possible new username
+            new_password: "", //possible new password
+            //current_password : ""                             //current password
+            new_income: 0.00
         };
     },
-    handleNameChange: function handleNameChange(e) {
-        // Prevent following the link.
+
+
+    //store new_username in attribute
+    handleUsernameChange: function handleUsernameChange(e) {
         e.preventDefault();
-        this.setState({ name: e.target.value });
+        this.setState({ new_username: e.target.value });
     },
+
+
+    //store new_password in attribute
     handlePasswordChange: function handlePasswordChange(e) {
-        // Prevent following the link.
         e.preventDefault();
-        this.setState({ password: e.target.value });
+        this.setState({ new_password: e.target.value });
     },
-    handleVerifyPassword: function handleVerifyPassword(e) {
+
+
+    //store old_password in attribute
+    /*handleOldPasswordChange(e){
+     e.preventDefault();
+     this.setState({old_password : e.target.value});
+     },*/
+
+    handleIncomeChange: function handleIncomeChange(e) {
         e.preventDefault();
-        this.setState({ verifyPassword: e.target.value });
+        this.setState({ new_income: e.target.value });
     },
-    handleSubmit: function handleSubmit(e) {
+
+
+    //return to dashboard page
+    handleGoBack: function handleGoBack(e) {
+        e.preventDefault();
+        window.location = 'http://localhost:8080/dashboard';
+    },
+
+
+    //submit transaction
+    handleProfileCheck: function handleProfileCheck(e) {
         var _this = this;
 
         // Prevents reinitialization
         e.preventDefault();
-        var name = this.state.name;
-        var password = this.state.password;
-        var verifyPassword = this.state.verifyPassword;
 
-        if (password.localeCompare(verifyPassword) != 0) {
-            e.preventDefault();
-            this.setState({ success: "Passwords do not match!" });
-        } else {
-            fetch('http://localhost:8080/accounts/signup?' + 'userName=' + name + "&password=" + password, {
+        var message = "";
+
+        //check if category is selected
+        if (!this.state.new_username || !this.state.new_password) {
+            message += "Please change a field. ";
+        }
+
+        //if no invalid inputs, then proceed to add transaction to user account and switch back to dashboard,
+        //otherwise display an error messsage and stay on the same page
+        if (message == "") {
+            var new_username = this.state.new_username;
+            var category = this.state.new_password;
+            var old_password = this.state.old_password;
+            fetch('http://localhost:8080/userAccount/addTransaction?' + 'new_username=' + new_username + '&category=' + category + '&old_password=' + old_password, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
                 }
             }).then(function (res) {
-                //if account and password was created
                 if (res.ok) {
-                    e.preventDefault();
-                    _this.setState({ success: 'Account created! Username: ' + name + ' Password: ' + password });
-                    window.location = 'http://localhost:8080/dashboard';
+                    _this.setState({ error: "Transaction added!" });
+                } else {
+                    _this.setState({ error: "Transaction couldn't be added." });
                 }
-                //if account and password was not created
-                else {
-                        _this.setState({ success: 'Account already exists! Username: ' + name + ' Password: ' + password });
-                    }
             });
+        } else {
+            this.setState({ error: message });
         }
     },
-    switchpage: function switchpage(e) {
+    handleIncomeCheck: function handleIncomeCheck(e) {
+        var _this2 = this;
+
+        // Prevents reinitialization
         e.preventDefault();
-        window.location = 'http://localhost:8080';
+
+        var message = "";
+
+        //check if category is selected
+        if (!this.state.new_income) {
+            message += "Please enter your income. ";
+        }
+
+        //if no invalid inputs, then proceed to change income
+        //otherwise display an error messsage and stay on the same page
+        if (message == "") {
+            var new_income = this.state.new_income;
+            fetch('http://localhost:8080/userAccount/addTransaction?' + 'new_income=' + new_income, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(function (res) {
+                if (res.ok) {
+                    _this2.setState({ error: "Income updated!" });
+                } else {
+                    _this2.setState({ error: "Income couldn't be updated." });
+                }
+            });
+        } else {
+            this.setState({ error: message });
+        }
     },
-    switchdashboard: function switchdashboard(e) {
-        e.preventDefault();
-        window.location = 'http://localhost:8080/dashboard';
+    handleAchievements: function handleAchievements(e) {
+        fetch('http://localhost:8080/transaction/achievement1?', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (res) {
+            if (res.ok) {
+                document.getElementById("1transaction").src = "http://imgur.com/yp98Nwz.jpg";
+            }
+        });
+
+        fetch('http://localhost:8080/transaction/achievement5?', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (res) {
+            if (res.ok) {
+                document.getElementById("5transactions").src = "http://imgur.com/rfcYAkY.jpg";
+            }
+        });
     },
     render: function render() {
         return _react2.default.createElement(
             'body',
-            { style: { backgroundColor: '#ECECEC', height: 700 } },
-            _react2.default.createElement('div', { style: { height: 50, margin: 'auto', background: '#ECECEC' } }),
+            { style: { margin: 0, padding: 0, fontSize: 0 }, onLoad: this.handleAchievements },
             _react2.default.createElement(
-                'table',
-                { style: { marginTop: 50, backgroundColor: '#43a047', margin: 'auto', width: "500", height: "417", border: "0", cellpadding: "0", cellspacing: "5" } },
+                'title',
+                null,
+                'My Account'
+            ),
+            _react2.default.createElement(
+                'div',
+                { style: { marginLeft: 225, marginTop: 20 } },
                 _react2.default.createElement(
-                    'tbody',
-                    { style: { margin: 'auto', align: 'center' } },
+                    'font',
+                    { style: { fontFamily: "Arial" } },
                     _react2.default.createElement(
-                        'tr',
-                        null,
-                        _react2.default.createElement(
-                            'td',
-                            { style: { align: 'left', height: '151', colspan: '2', margin: 'auto' } },
-                            _react2.default.createElement(
-                                'blockquote',
-                                null,
-                                _react2.default.createElement(
-                                    'h1',
-                                    null,
-                                    _react2.default.createElement('img', { id: 'pic', src: 'http://i.imgur.com/53taBiC.png', width: '115', height: '133', alt: '' }),
-                                    'Budget Buddy'
-                                )
-                            )
-                        )
+                        'font',
+                        { size: '+5' },
+                        'User Account'
                     ),
                     _react2.default.createElement(
-                        'tr',
-                        null,
+                        'div',
+                        { style: { marginTop: 30 } },
                         _react2.default.createElement(
-                            'td',
-                            null,
+                            'div',
+                            { style: { marginTop: 30 } },
                             _react2.default.createElement(
-                                'form',
-                                { onSubmit: this.handleSubmit },
-                                _react2.default.createElement(
-                                    'label',
-                                    null,
-                                    _react2.default.createElement(
-                                        'p',
-                                        { style: { paddingLeft: 150 } },
-                                        'Username: ',
-                                        _react2.default.createElement('input', { type: 'text', defaultValue: this.state.name, onChange: this.handleNameChange })
-                                    ),
-                                    _react2.default.createElement(
-                                        'p',
-                                        { style: { paddingLeft: 150 } },
-                                        'Password: ',
-                                        _react2.default.createElement('input', { type: 'password', defaultValue: this.state.password, onChange: this.handlePasswordChange })
-                                    ),
-                                    _react2.default.createElement(
-                                        'p',
-                                        { style: { paddingLeft: 100 } },
-                                        'Re-Enter Password: ',
-                                        _react2.default.createElement('input', { type: 'password', defaultValue: this.state.verifyPassword, onChange: this.handleVerifyPassword })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'p',
-                                    { style: { paddingLeft: 200 } },
-                                    _react2.default.createElement('input', { type: 'submit', value: 'Sign Up' })
-                                ),
-                                this.state.success
+                                'font',
+                                { size: '+2' },
+                                'Achievements'
+                            ),
+                            ' ',
+                            _react2.default.createElement('br', null),
+                            _react2.default.createElement('img', { id: 'accountcreated', src: 'http://imgur.com/PhbcBaA.jpg', width: '200', height: '325', alt: '' }),
+                            _react2.default.createElement('img', { id: '1transaction', src: 'http://imgur.com/LihzuRq.png', width: '200', height: '325', alt: '' }),
+                            _react2.default.createElement('img', { id: '5transactions', src: 'http://imgur.com/b8yATih.png', width: '200', height: '325', alt: '' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { style: { marginTop: 60 } },
+                            _react2.default.createElement(
+                                'font',
+                                { size: '+2' },
+                                'Edit Budget'
                             ),
                             _react2.default.createElement(
                                 'form',
-                                { onSubmit: this.switchpage },
+                                { onSubmit: this.handleIncomeCheck },
                                 _react2.default.createElement(
-                                    'p',
-                                    { style: { paddingLeft: 200 } },
-                                    _react2.default.createElement('input', { type: 'submit', value: 'Go Back' })
+                                    'div',
+                                    { style: { marginTop: 30 } },
+                                    _react2.default.createElement(
+                                        'font',
+                                        { size: '+2' },
+                                        'New Income:'
+                                    ),
+                                    _react2.default.createElement('br', null)
+                                ),
+                                _react2.default.createElement(
+                                    'font',
+                                    null,
+                                    '$'
+                                ),
+                                _react2.default.createElement('input', { type: 'number', min: '0.01', step: '0.01', max: '10000', ref: 'new_income', name: 'new_income', defaultValue: this.state.new_income, onChange: this.handleIncomeChange })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { style: { marginTop: 30 } },
+                                _react2.default.createElement('input', { type: 'submit', value: 'Submit Income Change' })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { style: { marginTop: 30 } },
+                            _react2.default.createElement(
+                                'form',
+                                { onSubmit: this.handleProfileCheck },
+                                _react2.default.createElement(
+                                    'div',
+                                    { style: { marginTop: 30 } },
+                                    _react2.default.createElement(
+                                        'font',
+                                        { size: '+2' },
+                                        'New Username:'
+                                    ),
+                                    _react2.default.createElement('br', null)
+                                ),
+                                _react2.default.createElement('input', { type: 'text', ref: 'new_username', name: 'new_username', defaultValue: this.state.new_username, onChange: this.handleUsernameChange }),
+                                _react2.default.createElement(
+                                    'div',
+                                    { style: { marginTop: 20 } },
+                                    _react2.default.createElement(
+                                        'font',
+                                        { size: '+2' },
+                                        'New Password:'
+                                    ),
+                                    _react2.default.createElement('br', null)
+                                ),
+                                _react2.default.createElement('input', { type: 'password', ref: 'new_username', name: 'new_username', defaultValue: this.state.new_username, onChange: this.handlePasswordChange }),
+                                _react2.default.createElement(
+                                    'div',
+                                    { style: { marginTop: 30 } },
+                                    _react2.default.createElement('input', { type: 'submit', value: 'Submit Profile Changes' })
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { style: { marginTop: 60 } },
+                            _react2.default.createElement(
+                                'font',
+                                { size: '+1', color: 'red' },
+                                _react2.default.createElement(
+                                    'b',
+                                    null,
+                                    this.state.error
                                 )
                             )
                         )
-                    ),
-                    _react2.default.createElement('td', { width: '175' })
+                    )
                 )
             )
         );
     }
 });
 
-var Signup = exports.Signup = function (_React$Component) {
-    _inherits(Signup, _React$Component);
+var EditSettings = exports.EditSettings = function (_React$Component) {
+    _inherits(EditSettings, _React$Component);
 
-    function Signup() {
-        _classCallCheck(this, Signup);
+    function EditSettings() {
+        _classCallCheck(this, EditSettings);
 
-        return _possibleConstructorReturn(this, (Signup.__proto__ || Object.getPrototypeOf(Signup)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (EditSettings.__proto__ || Object.getPrototypeOf(EditSettings)).apply(this, arguments));
     }
 
-    _createClass(Signup, [{
+    _createClass(EditSettings, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(AccountSignup, null)
+                _react2.default.createElement(SettingsComponent, null)
             );
         }
     }]);
 
-    return Signup;
+    return EditSettings;
 }(_react2.default.Component);
+
+;
 
 _reactDom2.default.render(_react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(Signup, null)
-), document.getElementById('statusFeed'));
+    _react2.default.createElement(EditSettings, null)
+), document.getElementById('settings_form'));
 
 /***/ })
 /******/ ]);
