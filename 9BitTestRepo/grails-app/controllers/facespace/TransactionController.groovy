@@ -3,7 +3,7 @@ package facespace
 import grails.rest.RestfulController
 
 class TransactionController extends RestfulController{
-    static allowedMethods = [addTransaction: 'POST',get_transactions: 'POST']
+    static allowedMethods = [addTransaction: 'POST',get_transactions: 'GET']
     static responseFormats = ['json', 'xml']
 
     TransactionController(){
@@ -36,7 +36,7 @@ class TransactionController extends RestfulController{
     //Returns a list of all the transactions with the associated username
     def get_transactions(){
         UserAccount userAcc = UserAccount.findByUserName("bun")
-        return userAcc.getTransactions()
+        [transactionList:userAcc.getTransactions()]
     }
 
     //check if user has at least 1 transaction
