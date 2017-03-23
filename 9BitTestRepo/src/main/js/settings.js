@@ -148,7 +148,7 @@ var SettingsComponent = React.createClass({
 
 
             {/* wrapper for SETTINGS page*/}
-            <div style={{marginLeft:225, marginTop:20}}>
+            <div style={{marginLeft:150, marginTop:20}}>
                 <font style={{fontFamily:"Arial"}}>
                     <font size="+5">My Account</font>
                     <div style={{marginTop:30}}>

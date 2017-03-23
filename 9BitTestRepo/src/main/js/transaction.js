@@ -202,7 +202,7 @@ var TransactionComponent = React.createClass({
             <title>Add Transaction/Transfer</title>
 
             {/* wrapper for TRANSACTION page*/}
-            <div style={{marginLeft:225, marginTop:10}}>
+            <div style={{marginLeft:150, marginTop:10}}>
                 <font style={{fontFamily:"Arial"}}>
                     <font size="+5">Add Transaction/Transfer</font>
                     <div style={{marginTop:15}}>

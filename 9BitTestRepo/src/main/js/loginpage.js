@@ -77,7 +77,7 @@ var AccountLogin = React.createClass({
                 <tr>
                     <td style={{align:'left', height:'151', colspan:'2', margin:'auto'}}><blockquote>
                         <h1>
-                            <img id="pic" src="http://i.imgur.com/53taBiC.png" width="115" height="133" alt=""/>
+                            <img id="pic" src="http://i.imgur.com/v085Nmb.png" width="115" height="133" alt=""/>
                             Budget Buddy
                         </h1>
                     </blockquote></td>

@@ -21787,7 +21787,7 @@ var AccountLogin = _react2.default.createClass({
                                 _react2.default.createElement(
                                     'h1',
                                     null,
-                                    _react2.default.createElement('img', { id: 'pic', src: 'http://i.imgur.com/53taBiC.png', width: '115', height: '133', alt: '' }),
+                                    _react2.default.createElement('img', { id: 'pic', src: 'http://i.imgur.com/v085Nmb.png', width: '115', height: '133', alt: '' }),
                                     'Budget Buddy'
                                 )
                             )

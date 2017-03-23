@@ -21927,7 +21927,7 @@ var TransactionComponent = _react2.default.createClass({
             ),
             _react2.default.createElement(
                 'div',
-                { style: { marginLeft: 225, marginTop: 10 } },
+                { style: { marginLeft: 150, marginTop: 10 } },
                 _react2.default.createElement(
                     'font',
                     { style: { fontFamily: "Arial" } },
