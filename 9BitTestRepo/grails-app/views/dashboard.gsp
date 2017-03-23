@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,7 @@
         <div class="selection">
             <p><a href="http://localhost:8080/dashboard"><img src="http://i.imgur.com/p7bALzm.png" width="50px" height="50px"></a><br/>Dashboard</p>
             <p><a href="http://localhost:8080/transaction"><img src="http://i.imgur.com/Oy0HiUk.png" width="50px" height="50px"></a><br/>Transaction</p>
-            <p><a href="http://localhost:8080/settings"><img src="http://i.imgur.com/6iuu6QJ.png" width="50px" height="50px"></a><br/>Account</p>
+            <p><a href="http://localhost:8080/settings"><img src="http://i.imgur.com/AUDk4YE.png" width="50px" height="50px"></a><br/>Settings</p>
             <p><a href="http://localhost:8080/"><img src="http://i.imgur.com/H1YlJbi.png" width="50px" height="50px"></a><br/>Logout</p>
         </div>
     </div>
