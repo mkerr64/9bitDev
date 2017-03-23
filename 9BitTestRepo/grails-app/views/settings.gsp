@@ -20,10 +20,10 @@
 
         <!--Sidebar Options-->
         <div class="selection">
-            <p><a href="http://localhost:8080/dashboard">Dashboard</a></p>
-            <p><a href="http://localhost:8080/transaction">Transactions</a></p>
-            <p>Achievements</p>
-            <p><a href="http://localhost:8080/settings">My Account</a></p>
+            <p><a href="http://localhost:8080/dashboard"><img src="http://i.imgur.com/p7bALzm.png" width="50px" height="50px"></a></p>
+            <p><a href="http://localhost:8080/transaction"><img src="http://i.imgur.com/Oy0HiUk.png" width="50px" height="50px"></a></p>
+            <p><a href="http://localhost:8080/settings"><img src="http://i.imgur.com/6iuu6QJ.png" width="50px" height="50px"></a></p>
+            <p><a href="http://localhost:8080/login"><img src="http://i.imgur.com/H1YlJbi.png" width="50px" height="50px"></a></p>
         </div>
     </div>
 </div>

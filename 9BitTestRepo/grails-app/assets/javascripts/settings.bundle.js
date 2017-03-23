@@ -21867,7 +21867,7 @@ var SettingsComponent = _react2.default.createClass({
                     _react2.default.createElement(
                         'font',
                         { size: '+5' },
-                        'User Account'
+                        'My Account'
                     ),
                     _react2.default.createElement(
                         'div',
