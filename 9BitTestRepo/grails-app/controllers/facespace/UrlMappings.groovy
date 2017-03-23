@@ -1,7 +1,7 @@
 package facespace
-
+import grails.plugin.springsecurity.annotation.Secured
+@Secured('ROLE_USER')
 class UrlMappings {
-
     static mappings = {
         "/$controller/$action?/$id?(.$format)?"{
             constraints {

@@ -1,7 +1,8 @@
 package facespace
 
 import grails.rest.RestfulController
-
+import grails.plugin.springsecurity.annotation.Secured
+@Secured('ROLE_USER')
 class TransactionController extends RestfulController{
     static allowedMethods = [addTransaction: 'POST',get_transactions: 'POST']
     static responseFormats = ['json', 'xml']
