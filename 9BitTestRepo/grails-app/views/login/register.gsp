@@ -122,7 +122,7 @@
                 <input type="submit" id="submit" value="${message(code: 'springSecurity.login.button')}"/>
             </p>
         </form>
-        <form action="${postUrl ?: '/'}" method="POST" id="loginForm" class="cssform" autocomplete="off">
+        <form action="${postUrl ?: '/login'}" method="POST" id="loginForm" class="cssform" autocomplete="off">
             <p>
                 <input type="submit" id="submit" value="${message(code: 'Back')}"/>
             </p>
