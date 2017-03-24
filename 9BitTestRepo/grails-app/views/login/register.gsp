@@ -40,6 +40,7 @@
         padding-left: 150px;
         margin-bottom: 20px;
         height: 1%;
+        white-space: nowrap;
     }
 
     #login .inner .cssform input[type="text"] {
@@ -76,6 +77,7 @@
         color: #c33;
     }
 
+
     #login .inner .text_ {
         width: 120px;
     }
@@ -109,19 +111,20 @@
                 <input type="password" class="text_" name="${passwordParameter ?: 'password'}" id="password"/>
             </p>
 
-            <p id="remember_me_holder">
-                <input type="checkbox" class="chk" name="${rememberMeParameter ?: 'remember-me'}" id="remember_me" <g:if test='${hasCookie}'>checked="checked"</g:if>/>
-                <label for="remember_me"><g:message code='springSecurity.login.remember.me.label'/></label>
+
+            <p>
+                <label for="password"><g:message code='Verify Password'/>:</label>
+                <input type="password" class="text_" name="${passwordParameter ?: 'password'}" id="password"/>
             </p>
+
 
             <p>
                 <input type="submit" id="submit" value="${message(code: 'springSecurity.login.button')}"/>
             </p>
         </form>
-        <form action="http://localhost:8080/register" class="cssform" autocomplete="off">
+        <form action="${postUrl ?: '/'}" method="POST" id="loginForm" class="cssform" autocomplete="off">
             <p>
-                Sign up now!<br/>
-                <input type="submit" id="submit" value="${message(code: 'Signup')}"/>
+                <input type="submit" id="submit" value="${message(code: 'Back')}"/>
             </p>
 
         </form>

@@ -14,6 +14,7 @@ class UrlMappings {
         "/dashboard"(view:"/dashboard")
         "/transaction"(view:"/transaction")
         "/settings"(view:"/settings")
+        "/register"(view:"/login/register")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }
