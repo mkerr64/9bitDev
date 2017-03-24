@@ -49,13 +49,7 @@ Other views not available until user is logged in.
 
 ![Signup](http://i.imgur.com/nRooXJe.png)     
 
-![Login](http://i.imgur.com/2VDefQQ.png)      
-
-#### Initial transactions/startup page:     
-
-At first start, each new month or each time period, income and savings goal are inputted.     
-
-![Income](http://i.imgur.com/bwaWoab.jpg)    
+![Login](http://i.imgur.com/2VDefQQ.png)         
 
 #### Everyday Transaction page:    
 
