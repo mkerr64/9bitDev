@@ -9,7 +9,8 @@ class UrlMappings {
             }
         }
 
-        "/" (view:"/loginpage")
+        "/" (view:"/dashboard")
+        "/login" (view:"/login/auth")
         "/signup" (view: "/signup")
         "/dashboard"(view:"/dashboard")
         "/transaction"(view:"/transaction")
