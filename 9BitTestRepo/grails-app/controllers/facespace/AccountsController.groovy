@@ -3,7 +3,6 @@ package facespace
 import grails.rest.RestfulController
 
 class AccountsController extends RestfulController{
-
     static allowedMethods = [createAccount: 'POST']
     static responseFormats = ['json', 'xml']
     String accounts = ""

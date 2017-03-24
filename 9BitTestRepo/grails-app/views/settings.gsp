@@ -14,16 +14,13 @@
     <!--Wrapper for all sidebar elements-->
     <div class="sidebar">
         <!--Profile picture box-->
-        <div class="imgbox">
-            <img> <!--Insert profile picture-->
-        </div>
 
         <!--Sidebar Options-->
         <div class="selection">
-            <p><a href="http://localhost:8080/dashboard">Dashboard</a></p>
-            <p><a href="http://localhost:8080/transaction">Transactions</a></p>
-            <p>Achievements</p>
-            <p><a href="http://localhost:8080/settings">My Account</a></p>
+            <p><a href="http://localhost:8080/dashboard"><img src="http://i.imgur.com/p7bALzm.png" width="50px" height="50px"></a><br/>Dashboard</p>
+            <p><a href="http://localhost:8080/transaction"><img src="http://i.imgur.com/Oy0HiUk.png" width="50px" height="50px"></a><br/>Transaction</p>
+            <p><a href="http://localhost:8080/settings"><img src="http://i.imgur.com/AUDk4YE.png" width="50px" height="50px"></a><br/>Settings</p>
+            <p><a href="http://localhost:8080/"><img src="http://i.imgur.com/H1YlJbi.png" width="50px" height="50px"></a><br/>Logout</p>
         </div>
     </div>
 </div>
