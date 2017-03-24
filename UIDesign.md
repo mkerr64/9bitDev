@@ -41,15 +41,15 @@ PROGRAMS USED: paint.NET, Photoshop CS5
 
 Quick view of all info: graphs, budget, categories, transaction and analytical advice.     
 
-![Dashboard](http://i.imgur.com/m3JuhGQ.png)    
+![Dashboard](http://i.imgur.com/GfGU76t.png)    
 
 #### Signup/login page:     
 
 Other views not available until user is logged in.    
 
-![Signup](http://i.imgur.com/BHlAbJ5.jpg)     
+![Signup](http://i.imgur.com/nRooXJe.png)     
 
-![Login](http://i.imgur.com/4eyLbo6.jpg)      
+![Login](http://i.imgur.com/2VDefQQ.png)      
 
 #### Initial transactions/startup page:     
 
@@ -61,16 +61,12 @@ At first start, each new month or each time period, income and savings goal are 
 
 Input of granular transaction.    
 
-![Transaction](http://i.imgur.com/9NyvfnD.jpg)            
+![Transaction](http://i.imgur.com/U0Cyv19.jpg)          
 
-#### Gamification:     
+#### Gamification/Settings:     
 
-Shows achievements and stretch goals.    
+Shows achievements and stretch goals.           
 
-![Achievements](http://i.imgur.com/hpMlrRc.png)
-
-#### My Account/Settings:         
-
-![Profile](http://i.imgur.com/PdrA1Bk.png)     
+![Settings](http://i.imgur.com/L2l1zhX.jpg)     
 
 [Home](README.md) 
