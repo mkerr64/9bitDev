@@ -15,17 +15,18 @@ google.charts.setOnLoadCallback(drawTableChart2);
 // Callback that creates and populates a data table,
 // instantiates the pie chart, passes in the data and
 // draws it.
-function drawChart() {
+function drawChart(housing,food,leisure,legal,gas) {
 
     // Create the data table.
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Topping');
     data.addColumn('number', 'Slices');
+
     data.addRows([
-        ['Housing', 3],
-        ['Food', 1],
-        ['Leisure', 1],
-        ['Legal', 1],
+        ['Housing', housing],
+        ['Food', food],
+        ['Leisure', leisure],
+        ['Legal', legal],
         ['Gas', 2]
     ]);
 
@@ -44,8 +45,9 @@ function drawChart() {
 }
 
 // callback that draws table chart
-function drawTableChart() {
+function drawTableChart(housing,food) {
     var data = new google.visualization.DataTable();
+
     data.addColumn('string', 'Transaction Category');
     data.addColumn('number', 'Amount');
     data.addColumn('boolean', 'Good');
