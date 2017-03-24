@@ -3,7 +3,7 @@ FROM MAIN REPOSITORY
 GRAILS AND IntelliJ
 - Download the most recent version of Grails and install: https://grails.org/download.html
 - Download IntelliJ ultimate and install: https://www.jetbrains.com/idea/download/#section=windows
-- To ensure that gradle is running properly on IntelliJ, 
+- To ensure that gradle is running properly on IntelliJ, there should be a grails run option in the upper right of the project window.
 
 
 TO CLONE PROJECT
