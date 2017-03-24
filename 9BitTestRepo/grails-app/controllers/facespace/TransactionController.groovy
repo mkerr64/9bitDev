@@ -38,6 +38,7 @@ class TransactionController extends RestfulController{
     def get_transactions(){
         UserAccount userAcc = UserAccount.findByUserName("bun")
         [transactionList:userAcc.getTransactions()]
+        response.status = 200
     }
 
     //check if user has at least 1 transaction
