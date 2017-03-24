@@ -6,15 +6,51 @@ import ReactDOM from 'react-dom';
 import drawChart from './dashboard'
 import drawTableChart from './dashboard'
 import drawTableChart2 from './dashboard'
-/*var chartData = React.createClass({
+var chartData = React.createClass({
+
+    // Used to initialize state
     getInitialState () {
         return {
-            amount : "",                                        //transaction amount
-            choice : "",                                        //category choice
-            date: "",                                           //transaction date
-            error : " "                                         //error message to be displayed if invalid input
+            transactionList : "",                                        //transactionlist
         }
-    }
     },
 
-;*/
+    handleGetChart(){
+        fetch('http://localhost:8080/transaction/get_transactions?'
+            , {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res =>{
+            if(res.ok){
+                let list = this.state.transactionList;
+                if (list != ""){
+                    console.log("SUCCESS");
+                } else {
+                    console.log("FAIL")
+                }
+            }
+        });
+    },
+
+    render () {
+        return (<div></div>
+        );
+    }
+});
+
+export class ChartList extends React.Component{
+    render(){
+        return(
+            <div>
+                <chartData/>
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(
+    <div>
+        <ChartList/>
+    </div>, document.getElementById('statusFeed'));
