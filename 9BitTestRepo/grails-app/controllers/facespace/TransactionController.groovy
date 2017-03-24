@@ -25,7 +25,7 @@ class TransactionController extends RestfulController{
             //Creates a new transaction and attaches it to the user
             Transaction newTran = new Transaction(sourceProfile: userAcc, amounts: uAmount, categorys: uCategory, dates: uDate)
             userAcc.addToTransactions(newTran).save(flush: true)
-            System.out.println(userAcc.getTransactions().size())
+            System.out.println(UserAccount.findByUserName("bun").getTransactions().size())
             response.status = 200
         }
         else{

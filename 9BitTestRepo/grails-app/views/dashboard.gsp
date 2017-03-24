@@ -5,15 +5,16 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="${resource(dir: '../stylesheets', file: 'interface_style.css')}" type="text/css">
     <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+    var transactList = "${createLink(url: [controller: 'TransactionController', action: 'get_transactions'])}";
+</script>
 
 </head>
 
-<body>
+<body onload="loadChart()">
 <!--Wrapper for all template elements-->
 
 <script type="text/javascript" src="../assets/dashboard.bundle.js"></script>
-
 <div>
     <!--Title bar elements-->
     <div class="sidetitle"></div>

@@ -6,11 +6,11 @@ google.charts.load('current', {'packages': ['corechart', 'table']});
 
 
 // Set a callback to run when the Google Visualization API is loaded (this is for the pie chart and bar chart)
-google.charts.setOnLoadCallback(drawChart);
+//google.charts.setOnLoadCallback(drawChart);
 
 // set a callback for the tables
-google.charts.setOnLoadCallback(drawTableChart);
-google.charts.setOnLoadCallback(drawTableChart2);
+//google.charts.setOnLoadCallback(drawTableChart);
+//google.charts.setOnLoadCallback(drawTableChart2);
 
 // Callback that creates and populates a data table,
 // instantiates the pie chart, passes in the data and
@@ -27,7 +27,7 @@ function drawChart(housing,food,leisure,legal,gas) {
         ['Food', food],
         ['Leisure', leisure],
         ['Legal', legal],
-        ['Gas', 2]
+        ['Gas', gas]
     ]);
 
     // Set chart options
@@ -45,18 +45,23 @@ function drawChart(housing,food,leisure,legal,gas) {
 }
 
 // callback that draws table chart
-function drawTableChart(housing,food) {
+function drawTableChart(transactionList) {
     var data = new google.visualization.DataTable();
 
     data.addColumn('string', 'Transaction Category');
     data.addColumn('number', 'Amount');
     data.addColumn('boolean', 'Good');
-    data.addRows([
+    for(var i=0; i<transactionList.length;i++){
+        var transaction = transactionList[i]
+        data.addRows([transaction.getCategory, {v: transaction.getAmount(), f: '$'+transaction.getAmount().toString()}, true])
+    }
+
+    /*data.addRows([
         ['Housing', {v: 10000, f: '$10,000'}, true],
         ['Food', {v: 8000, f: '$8,000'}, false],
         ['Food', {v: 12500, f: '$12,500'}, true],
         ['Leisure', {v: 7000, f: '$7,000'}, true]
-    ]);
+    ]);*/
 
     var table = new google.visualization.Table(document.getElementById('table_div'));
 
@@ -75,3 +80,5 @@ function drawTableChart2() {
 
     table.draw(data, {showRowNumber: true, width: '600', height: '200'});
 }
+
+
