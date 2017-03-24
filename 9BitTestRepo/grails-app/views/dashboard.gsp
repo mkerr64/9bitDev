@@ -43,13 +43,13 @@
 <div id="chart_div" style="position:absolute; left:190px; top: 80px;">
 
 </div>
-<div id="barchart_div" style="position:absolute; left:790px; top: 80px;">
+<div id="barchart_div" style="position:absolute; left:800px; top: 80px;">
 
 </div>
-<div id="table_div" style="position:absolute; left:190px; top: 480px;">
+<div id="table_div" style="position:absolute; left:190px; top: 500px;">
 
 </div>
-<div id="table_div2" style="position:absolute; left:790px; top: 480px;">
+<div id="table_div2" style="position:absolute; left:900px; top: 500px;">
 
 </div>
 
