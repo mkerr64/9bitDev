@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="layout" content="${gspLayout ?: 'main'}"/>
+    <meta name="layout"/>
     <title><g:message code='springSecurity.login.title'/></title>
     <style type="text/css" media="screen">
+
     #login {
         margin: 15px 0px;
         padding: 0px;
@@ -15,8 +16,8 @@
         padding-bottom: 6px;
         margin: 60px auto;
         text-align: left;
-        border: 1px solid #aab;
-        background-color: #f0f0fa;
+        border: 1px solid #43a047;
+        background-color: #66BB6A;
         -moz-box-shadow: 2px 2px 2px #eee;
         -webkit-box-shadow: 2px 2px 2px #eee;
         -khtml-box-shadow: 2px 2px 2px #eee;
@@ -24,18 +25,18 @@
     }
 
     #login .inner .fheader {
-        padding: 18px 26px 14px 26px;
-        background-color: #f7f7ff;
+        padding: 20px 26px 24px 26px;
+        background-color: #43a047;
         margin: 0px 0 14px 0;
-        color: #2e3741;
-        font-size: 18px;
+        color: #FFF;
+        font-size: 30px;
         font-weight: bold;
     }
 
     #login .inner .cssform p {
         clear: left;
         margin: 0;
-        padding: 4px 0 3px 0;
+        padding: 20px 0 0px 0;
         padding-left: 105px;
         margin-bottom: 20px;
         height: 1%;
@@ -88,7 +89,10 @@
 <body>
 <div id="login">
     <div class="inner">
-        <div class="fheader"><g:message code='springSecurity.login.header'/></div>
+        <div class="fheader">
+            <img src="http://i.imgur.com/v085Nmb.png" width="90" height="100" alt=""/>
+            <g:message code='Budget Buddy'/>
+        </div>
 
         <g:if test='${flash.message}'>
             <div class="login_message">${flash.message}</div>
