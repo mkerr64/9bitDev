@@ -9,7 +9,7 @@ This feature will provide the user with visual representations of their spending
 In order for this feature to be implemented we will need:   
 
 * Data to create the visualizations. If the graphs and charts are specifically for the user, then these will be created by the data that the user provides when they use the app.     
-* Conversion of the data into visuals such as charts and graphs. This will be done by grouping the data into relevant categories (such as by month or what money is being spent on) in a Java program. The categories will be pre-set and the user will enter amounts for each category and/or month.    
+* Conversion of the data into visuals such as charts and graphs. This will be done by grouping the data into relevant categories in a Javascript program. The categories will be pre-set and the user will enter amounts for each category and/or month.    
 * An API to create comprehensive visuals. This will be done using Google Charts API.    
 
 This feature is an important part of the app as it provides a visual guide to the user’s progress in their budgeting goals. Since failure to implement this feature would severely affect other features, it will be prioritized to ensure it is completed and successfully implemented.   
@@ -21,7 +21,7 @@ This feature will provide users with goals and achievements for achieving certai
 In order to implement this we will need:    
 
 * A program that will set numerical values that will trigger achievements when reached. This will be done by one team member using a Java program.      
-* Visual representation – another team member will work on integrating the achievements into the user interface so that the user can see what achievements they’ve earned. This can be done either with visuals from Java, or if we choose to have more advanced visuals an API such as Google charts can be used.         
+* Visual representation – a team member will work on integrating the achievements into the user interface so that the user can see what achievements they’ve earned. The achievements are represented by custom images.         
 
 Since this feature relies on the user’s data and implementing a set of variables corresponding to amount for the back end and visuals for the front end, it should be fairly easily to implement. With the exception of the achievements feature, no other features will be affected should this feature not be completed.    
 
@@ -32,7 +32,7 @@ This is a core feature for the app and will require standard input/output comman
 
 This feature is crucial for the application as the purpose of the app is to provide information to the user based on their personal financial data. The following features rely on basic user input:    
 
-* analysis, comparison, visualization, gamification, and achievement system.       
+* visualization, gamification, and achievement system.       
 
 
 #### Analysis
