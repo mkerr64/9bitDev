@@ -1,11 +1,9 @@
 package facespace
 
-import grails.converters.JSON
 import grails.rest.RestfulController
 import grails.plugin.springsecurity.annotation.Secured
 @Secured('ROLE_USER')
 class TransactionController extends RestfulController{
-    static allowedMethods = [addTransaction: 'POST']
     static responseFormats = ['json', 'xml']
 
     TransactionController(){
@@ -26,8 +24,10 @@ class TransactionController extends RestfulController{
 
         String username = principal.username
         if(username != null){
+            System.out.print(username)
             //Creates a new transaction and attaches it to the user
-            def newTrans = new Transaction(username: username, amount: uAmount, category: uCategory, date: uDate).save()
+            def newTrans =  new Transaction(username: username, amount: uAmount, category: uCategory, date: uDate)
+            assert newTrans.save()
 
             //System.out.println(UserAccount.findByUserName("bun").getTransactions().size())
             if(Transaction.findAllByUsername(username).size() != 0){
@@ -56,9 +56,11 @@ class TransactionController extends RestfulController{
     }
 
     //check if user has at least 1 transaction
+    //check if user has at least 1 transaction
     def achievement1(){
-        UserAccount userAcc = UserAccount.findByUserName("bun")
-        if ( (userAcc.getTransactions() != null) && (userAcc.getTransactions().size() >= 1)){
+        def username = principal.username
+        def transactionList = Transaction.findAllByUsername(username)
+        if ( (transactionList != null) && (transactionList.size() >= 1)){
             response.status = 200
         } else{
             response.status = 404
@@ -67,8 +69,9 @@ class TransactionController extends RestfulController{
 
     //check if user has at least 5 transactions
     def achievement5(){
-        UserAccount userAcc = UserAccount.findByUserName("bun")
-        if ( (userAcc.getTransactions() != null) && (userAcc.getTransactions().size() >= 5)){
+        def username = principal.username
+        def transactionList = Transaction.findAllByUsername(username)
+        if ( (transactionList != null) && (transactionList.size() >= 5)){
             response.status = 200
         } else {
             response.status = 404
