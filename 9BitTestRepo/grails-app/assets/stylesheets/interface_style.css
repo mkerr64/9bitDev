@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.sidetitle {
+    width: 120px;
+    height: 80px;
+    background: #43a047;
+    display: inline-block;
+}
+
+h1 {
+  color: white;
+  padding-left: 20px;
+  font-family: "Helvetica";
+}
+
+
+.title {
+  width: 92.3%;
+  height: 80px;
+  background: #66BB6A;
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+
+}
+
+.imgbox {
+  height: 75px;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 75px;
+  background-color: #BEBEBE;
+}
+
+.sidebar {
+  width: 120px;
+  height: 100%;
+  position: absolute;
+  background: #ECECEC;
+  padding: 0;
+  margin-top: -5px;
+
+}
+
+.selection P{
+  color: #BEBEBE;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Lucida Grande";
+  border-top-style: solid;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin: 0;
+}
+

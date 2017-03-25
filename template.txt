@@ -1,0 +1,39 @@
+    render () {
+        return (
+            <body style={{margin:0, padding:0, fontSize:0}}>
+    <title>Add Transaction/Transfer</title>
+
+        {/* Wrapper for all template elements*/}
+        <div>
+        {/* Title bar elements*/}
+        <div style={{width:190, height:80, background:'#43a047', display: "inline-block"}}></div>
+        <div style={{height:80, width: 1380, background:'#66BB6A', display:"inline-block", position: "absolute", fontSize: 18}}>
+    <h1 style={{color: "#FFFFFF", paddingLeft: 20, fontFamily: "Arial"}}>Budget Buddy </h1>
+        </div>
+
+        {/* Wrapper for all sidebar elements*/}
+        <div style={{width:190, height: 675, position:"absolute", background: "#ECECEC"}}>
+        {/* Profile picture box*/}
+    <div style={{height: 200, width: 160, marginLeft: 'auto', marginRight: 'auto', marginTop: 75, marginBottom: 75, background: '#BEBEBE'}}>
+    <img/> {/* Insert profile picture*/}
+        </div>
+
+        {/* Sidebar Options*/}
+        <div style={{color:'#BEBEBE', textAlign: 'center', fontSize: 22, borderTopStyle: 'solid', paddingTop: 7, paddingBottom: 7, margin: 0}}>
+    <p>Dashboard</p>
+        <p>Transactions</p>
+        <p>Achievements</p>
+        <p>My Account</p>
+        </div>
+        </div>
+        </div>
+
+
+	<div>
+	   {/*CODE FOR SPECIFIC PAGE GOES HERE*/}
+	</div>
+
+        </body>
+    );
+    }
+});
