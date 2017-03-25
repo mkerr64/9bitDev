@@ -1,16 +1,19 @@
 package facespace
 
+import grails.converters.JSON
 import grails.rest.RestfulController
 import grails.plugin.springsecurity.annotation.Secured
 @Secured('ROLE_USER')
 class TransactionController extends RestfulController{
-    static allowedMethods = [addTransaction: 'POST',get_transactions: 'GET']
+    static allowedMethods = [addTransaction: 'POST']
     static responseFormats = ['json', 'xml']
 
     TransactionController(){
         super(Transaction)
     }
     //for fetch also
+    def springSecurityService
+    def principal = springSecurityService.principal
     def addTransaction(){
         //Saves the Transaction parameters obtained from front-end
         String uAmount = params.amount
@@ -18,15 +21,22 @@ class TransactionController extends RestfulController{
         String uDate = params.date
 
         //Gets the user corresponding to the provided username
-        UserAccount userAcc = UserAccount.findByUserName("bun")
-        System.out.println(uCategory)
+        //UserAccount userAcc = UserAccount.findByUserName("bun")
+        //System.out.println(uCategory)
 
-        if(userAcc != null){
+        String username = principal.username
+        if(username != null){
             //Creates a new transaction and attaches it to the user
-            Transaction newTran = new Transaction(sourceProfile: userAcc, amounts: uAmount, categorys: uCategory, dates: uDate)
-            userAcc.addToTransactions(newTran).save(flush: true)
-            System.out.println(UserAccount.findByUserName("bun").getTransactions().size())
-            response.status = 200
+            def newTrans = new Transaction(username: username, amount: uAmount, category: uCategory, date: uDate).save()
+
+            //System.out.println(UserAccount.findByUserName("bun").getTransactions().size())
+            if(Transaction.findAllByUsername(username).size() != 0){
+                response.status = 200
+            }
+            else{
+                response.status = 404
+            }
+
         }
         else{
             //Throws a 404 if the user could not be found
@@ -35,10 +45,14 @@ class TransactionController extends RestfulController{
 
     }
     //Returns a list of all the transactions with the associated username
-    def get_transactions(){
-        UserAccount userAcc = UserAccount.findByUserName("bun")
-        [transactionList:userAcc.getTransactions()]
-        response.status = 200
+    def getTransactions(){
+        String username = principal.username
+        //UserAccount userAcc = UserAccount.findByUserName("bun")
+        def listy = Transaction.findAllByUsername(username)
+        System.out.print(listy.size())
+        respond 'hello world'//Transaction.list()
+
+
     }
 
     //check if user has at least 1 transaction

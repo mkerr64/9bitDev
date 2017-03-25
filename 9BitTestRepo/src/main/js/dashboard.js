@@ -6,7 +6,7 @@ google.charts.load('current', {'packages': ['corechart', 'table']});
 
 
 // Set a callback to run when the Google Visualization API is loaded (this is for the pie chart and bar chart)
-//google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart);
 
 // set a callback for the tables
 //google.charts.setOnLoadCallback(drawTableChart);
@@ -15,8 +15,17 @@ google.charts.load('current', {'packages': ['corechart', 'table']});
 // Callback that creates and populates a data table,
 // instantiates the pie chart, passes in the data and
 // draws it.
-function drawChart(housing,food,leisure,legal,gas) {
+function drawChart() {
+    fetch('http://localhost:8080/transaction/getTransactions')
+        .then(response => {
+            if(response.ok){
+                response.json().then(json => {
+                window.alert(response.json)
 
+            })
+            }
+
+        });
     // Create the data table.
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Topping');
