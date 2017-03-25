@@ -40,7 +40,7 @@ jQuery.ajax({
         for(let i = 0; i<resultData.length;i++) {
             let currCat = resultData[0].category;
             let currAm = resultData[0].amount;
-            if (currCat === 'food') {
+            if (currCat == 'food') {
                 foodSum = foodSum + parseInt(currAm);
                 foodCn = foodCn + 1;
             }
@@ -48,23 +48,23 @@ jQuery.ajax({
                 housingSum = housingSum + parseInt(currAm);
                 housingCn = housingCn + 1;
             }
-            else if (currCat === 'leisure') {
+            else if (currCat == 'leisure') {
                 leisureSum = leisureSum + parseInt(currAm);
                 leisureCn = leisureCn + 1;
             }
-            else if (currCat === 'transportation') {
+            else if (currCat == 'transportation') {
                 transSum = transSum + parseInt(currAm);
                 transCn = transCn + 1;
             }
-            else if (currCat === 'savings') {
+            else if (currCat == 'savings') {
                 savingsSum = savingsSum + parseInt(currAm);
                 savingsCn = savingsSum + 1;
             }
-            else if (currCat === 'school') {
+            else if (currCat == 'school') {
                 schoolSum = schoolSum + parseInt(currAm);
                 schoolCn = schoolCn + 1;
             }
-            else if (currCat === 'clothing') {
+            else if (currCat == 'clothing') {
                 clothSum = clothSum + parseInt(currAm);
                 clothCn = clothCn + 1;
             }
