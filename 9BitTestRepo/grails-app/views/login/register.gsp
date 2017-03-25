@@ -119,12 +119,6 @@
 
 
             <p>
-                <label for="income"><g:message code='Income'/>:</label>
-                <input type="text" class="text_" name="${passwordParameter ?: 'income'}" id="income"/>
-            </p>
-
-
-            <p>
                 <input type="submit" id="submit" value="${message(code: 'springSecurity.login.button')}"/>
             </p>
         </form>

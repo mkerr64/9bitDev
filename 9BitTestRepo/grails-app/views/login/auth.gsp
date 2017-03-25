@@ -90,8 +90,8 @@
 <div id="login">
     <div class="inner">
         <div class="fheader">
-            <img src="http://i.imgur.com/v085Nmb.png" width="90" height="100" alt=""/>
-            <g:message code='Budget Buddy'/>
+            <img src="https://i.imgur.com/S9TLwK6.png" width="340" height="100"/>
+
         </div>
 
         <g:if test='${flash.message}'>

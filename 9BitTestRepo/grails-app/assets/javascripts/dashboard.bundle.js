@@ -124,19 +124,9 @@ function drawTableChart(housing, food) {
 
     var table = new google.visualization.Table(document.getElementById('table_div'));
 
-    table.draw(data, { showRowNumber: true, width: '600', height: '200' });
+    table.draw(data, { showRowNumber: true, width: '1100', height: '250' });
 }
 
-function drawTableChart2() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Advice Category');
-    data.addColumn('string', 'Advice');
-    data.addRows([['Spending Habits', 'Use the 50/30/20 rule']]);
-
-    var table = new google.visualization.Table(document.getElementById('table_div2'));
-
-    table.draw(data, { showRowNumber: true, width: '600', height: '200' });
-}
 
 /***/ })
 
