@@ -5,7 +5,7 @@ class SettingsController {
 
     def index() { }
 
-    def setIncome(){
+    /*def setIncome(){
         def springSecurityService
         def user = spring.SecurityService.currentUser
         User userAcc = User.findByUserName(user)
@@ -40,5 +40,5 @@ class SettingsController {
         }  else {
             response.status = 404
         }
-    }
+    }*/
 }
