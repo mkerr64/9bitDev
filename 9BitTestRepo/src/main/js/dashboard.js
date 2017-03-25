@@ -88,10 +88,6 @@ function drawChart(foodSum, housingSum, leisureSum, transSum, savingsSum, school
     data.addColumn('number', 'Slices');
 
     data.addRows([
-        ['Food',foodSum],
-        ['Housing', housingSum],
-        ['Leisure', leisureSum],
-        ['Transportation', transSum],
         ['Food', foodSum],
         ['Housing', housingSum],
         ['Leisure', leisureSum],
