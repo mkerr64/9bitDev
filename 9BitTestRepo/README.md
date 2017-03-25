@@ -2,9 +2,7 @@ FROM MAIN REPOSITORY
 
 GRAILS AND IntelliJ
 - Download the most recent version of Grails and install: https://grails.org/download.html
-- Download IntelliJ ultimate and install: https://www.jetbrains.com/idea/download/#section=windows
-- To ensure that gradle is running properly on IntelliJ, 
-
+- Download IntelliJ ultimate and install: https://www.jetbrains.com/idea/download/#section=windows 
 
 TO CLONE PROJECT
 
@@ -40,5 +38,16 @@ OPTION 2 - Command Line
 - Go to the folder where your project is stored and SHIFT + right-click and select "open a new command window here"
 - run grails
 - then run-app
+
+SIGN IN TO THE APP
+To sign into the application, use:
+
+username: user
+password: password
+
+USING THE APP
+
+There are four buttons on the left side: dashboard brings the user to the home page of the app that displays transactions and the graphs of
+user's spending. Add transactions takes the user to a page where they can add a new transaction. Settings takes the user to the settings page which displays the achievements the user has earned. The logout button logs the user out of the application.
 
 Dependencies: merged pull requests from group member GitHub repositories
